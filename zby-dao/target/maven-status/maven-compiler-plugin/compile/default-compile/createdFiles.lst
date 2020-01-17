@@ -1,0 +1,3 @@
+com\zby\manage\dao\entity\User.class
+com\zby\manage\dao\mapper\UserMapper.class
+com\zby\manage\dao\basemapper\CommonMapper.class

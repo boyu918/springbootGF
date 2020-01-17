@@ -1,0 +1,29 @@
+zby:
+  name: zbyy
+  age: ${random.int(10)}
+spring:
+  datasource:
+    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/zby_springboot?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+    username: root
+    password: WO8228366
+#    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      # 数据库访问配置, 使用druid数据源
+      # 连接池配置
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      # 连接等待超时时间
+      max-wait: 30000
+      # 配置检测可以关闭的空闲连接间隔时间
+      time-between-eviction-runs-millis: 60000
+      # 配置连接在池中的最小生存时间
+      min-evictable-idle-time-millis: 300000
+      validation-query: select '1'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+
+

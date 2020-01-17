@@ -1,0 +1,35 @@
+server:
+  port: 4455
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: zby-springboot
+mybatis:
+  # 扫描路径
+  type-aliases-package: com.zby.manage.dao.entity
+  mapper-locations: classpath:mapping/*.xml
+  property:
+    order: BEFORE
+
+#mappers 多个接口时逗号隔开
+mapper:
+  mappers: com.zby.manage.dao.basemapper.CommonMapper
+  not-empty: false
+  identity: mysql
+
+#pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+management:
+  security:
+    enabled: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:4444/eureka

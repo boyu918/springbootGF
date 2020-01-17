@@ -1,0 +1,3761 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://jh.esf.fang.com//a/fang197879692?_rfss=31&rfss=1-a5c5262e0ab72e3b3c-31 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+        郭兰的网上店铺,致电13567908808-搜房帮-房天下</title>
+    <meta name="keywords" content="金华房媒,13567908808">
+    <meta name="description" content="金华房媒的网上店铺为您提供更多的二手房房源、租房房源信息。找房源、卖二手房、买二手房请致电:13567908808，郭兰为您竭诚服务。">
+    <link rel="stylesheet" type="text/css" href="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/agentshop.css">    
+
+
+ 
+    <script src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/jquery-3.js.下载"></script>
+    <script src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/fangPlayer.js.下载"></script>
+    <script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/Lunbo.js.下载"></script>
+    <script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/ie8.js.下载"></script>
+    <script type="text/javascript">
+        var hasesfhouse = 1;
+        var hasrenthouse = 1;
+        var agentid = '166099556';
+        var agemtname = '郭兰';
+        var agentmanagername = 'fang197879692';
+        var agenttel = '13567908808';
+        var ubPageNo = 'esf_jjr^xq_pc';
+    </script>
+</head>
+<body>
+    <script src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/im4.0.1.js.下载" charset="utf-8"></script><iframe src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/webim.html" id="webimIframe" frameborder="0" scrolling="no" width="2" height="20" name="webimxx" style="position: fixed; right: 0px; bottom: 0px; z-index: 99999; height: 20px; width: 2px;"></iframe>
+<script src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loginpop.common.js.下载" type="text/javascript"></script>
+<script type="text/javascript">
+
+    //在线咨询经纪人列表，json格式
+    var IMAgentList = [{"AgentID":"166099556","AgentName":"郭兰","ManagerName":"fang197879692","ShopUrl":"//jh.esf.fang.com/a/fang197879692","Avatar":"http://imgwcs3.soufunimg.com/agents/2019_11/26/wap/newcertificate/a400c643-8e23-4c2e-99f7-22bc4f48f322.jpg","Tel":"13567908808"}];
+    //在线咨询经纪人用户名，多个以","隔开
+    var IMManagerName = "fang197879692";
+    //在线图片
+    var onlineImg = "//static.soufunimg.com/esf/esf/online/secondhouse/images/Agent/agentlist/icon_fangliao.png";
+    //不在线图片
+    var offlineImg = "//static.soufunimg.com/esf/esf/online/secondhouse/images/Agent/agentlist/icon_fangliao.png";
+    function getCookie(name) {
+        var arr = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)(;|$)'));
+        return arr && arr[2] || '';
+    }
+    //初始化IM
+    jQuery(document).ready(function () {
+        var sfutcookievalue = '';
+        try
+        {
+            sfutcookievalue = getCookie('sfut');
+        }
+        catch(e){
+            sfutcookievalue = '';
+        }
+        if (sfutcookievalue != '') {
+            jQuery.ajax({
+                type: "get",
+                url: "/newsecond/include/DefaultUserLoginNew.aspx?method=init",
+                dataType: "json",
+                success: function (userData) {
+                    var data = eval(userData);
+                    window.fangWebIM.init({
+                        type: "webesf",
+                        userid: userData.userid,//登录用户请传通行证用户ID，非登录不传
+                        username: userData.realusername,//登录用户请传通行证用户名，非登录不传
+                        showname: userData.realusername,//显示用
+                        city: "金华",//城市必填
+                        avatar: userData.avatar
+                    });
+                },
+                error: function () {
+                    window.fangWebIM.init({
+                        type: "webesf",
+                        userid: '',//登录用户请传通行证用户ID，非登录不传
+                        username: '',//登录用户请传通行证用户名，非登录不传
+                        showname: '',//显示用
+                        city: "金华",//城市必填
+                        avatar: ""
+                    });
+                }
+            });
+        }
+        else
+        {
+            window.fangWebIM.init({
+                type: "webesf",
+                userid: '',//登录用户请传通行证用户ID，非登录不传
+                username: '',//登录用户请传通行证用户名，非登录不传
+                showname: '',//显示用
+                city: "金华",//城市必填
+                avatar: ""
+            });
+        }
+
+        //遍历经纪人列表，绑定事件
+        jQuery.each(IMAgentList, function (i, agent) {
+            jQuery(document.body).on("click", "[name='" + agent.AgentID + "online']", function () {
+                if (getCookie('sfut')) {
+                    var clue = window.FCLUE.collect() || {};
+                    window.fangWebIM.openChat({
+                        "type": "webesf",//新房为xf，二手房为agent，家居为home
+                        "contactId": agent.ManagerName,
+                        "showname": agent.AgentName,
+                        "city": "金华",
+                        "pname": '0',
+                        "tip": "我正在浏览您的房源",
+                        "shop": agent.ShopUrl,
+                        "avatar": agent.Avatar,
+                        "tel": agent.Tel,
+                        "clue": clue
+                    });
+                } else {
+                    _passport_login_pop_.open({
+                        // 自定义弹框的标题，必填
+                        title: '注册登陆后继续畅聊'
+                    }, function (callbackObj, passportInfoObj) {
+                        location.reload();
+                    });
+                }
+                
+                
+            });
+        });
+
+        jQuery.ajax({
+            type: "get",
+            url: "/EsfHouse/Ajax/IMOnlieStatus.aspx",
+            data: "username=" + IMManagerName,
+            dataType: "json",
+            success: function (onlineData) {
+                var data = eval(onlineData);
+                jQuery.each(data, function (n, statusValue) {
+                    //查找agentid
+                    jQuery.each(IMAgentList, function (m, agentValue) {
+                        if (agentValue.ManagerName.replace("ae:","") == statusValue.UserName.replace("ae:","")) {
+                            //在线/留言图片
+                            var talkImg = jQuery("[name='" + agentValue.AgentID + "online']");
+
+                            if (statusValue.Status == 1) {//在线
+                                talkImg.attr("src", onlineImg);
+                            } else {//不在线
+                                talkImg.attr("src", offlineImg);
+                            }
+
+                            talkImg.show();
+                        }
+                    });
+
+                });
+            }
+        });
+    });
+</script><!--二维码浮层-->
+<div class="floatingnew">
+  <div class="righticon1">
+    <a class="ma iconpub" href="javascript:;">
+      <span class="mahover" style="display: none;">
+        <img alt="我的二维码" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/100x100.htm">
+      </span>
+    </a>
+  </div>
+  <div style="" class="righticon2" id="floatingup">
+    <a class="top iconpub" href="javascript:;"></a>
+    <script type="text/javascript">
+        function changeWindowWidth() {
+            var w = document.documentElement.clientWidth; //获取页面可见高度
+        }
+        jQuery(function () { changeWindowWidth() });
+        jQuery(window).bind("resize", function () { changeWindowWidth(); });
+        function showDbox(index) {
+            var obj = document.getElementById("dbox_" + index);
+            obj.style.display = '';
+        }
+        function hiddenDbox(index) {
+            var obj = document.getElementById("dbox_" + index);
+            obj.style.display = 'none';
+        }
+        jQuery(window).scroll(function () {
+            var fold = jQuery(window).scrollTop();
+            var w = document.documentElement.clientHeight; //获取页面可见高度
+            if (fold > w) {
+                jQuery("#floatingup").css("display", "");
+            }
+            else {
+                jQuery("#floatingup").css("display", "none");
+            }
+        })
+    </script> 
+  </div>
+</div>
+
+    <!--topheader start-->
+    <!--头文件开始-->
+    <script type="text/javascript">
+    var city = '金华';
+    var shortcity = 'jh';
+
+    if (shortcity == "NJ") {
+        shortcity = "nanjing";
+    }
+    if (shortcity == "ty") {
+        shortcity = "taiyuan";
+    }
+    if (shortcity == "SHAOXING") {
+        shortcity = "sx";
+    }
+    if (shortcity == "cc") {
+        shortcity = "changchun";
+    }
+    var BBsDomain = '';
+    var clickid = "esf" + shortcity + "_";
+    var imgurl = '//static.soufunimg.com/esf/esf/online/secondhouse/old';
+    var jsShortDomain = 'jh.fang.com';
+</script>
+<link rel="stylesheet" type="text/css" href="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/reset.css">
+<link rel="stylesheet" type="text/css" href="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/search20141022.css">
+<!--<link rel="stylesheet" type="text/css" href="/gg/CssFiles/common/search20141022.css" />-->
+
+<link rel="dns-prefetch" href="https://jsub.fang.com/">
+<link rel="dns-prefetch" href="https://clickm.fang.com/">
+<link rel="dns-prefetch" href="https://countubn.3g.fang.com/">
+<link rel="dns-prefetch" href="https://countpvn.3g.fang.com/">
+<link rel="dns-prefetch" href="https://static.soufunimg.com/">
+<link rel="dns-prefetch" href="https://img.soufunimg.com/">
+<link rel="dns-prefetch" href="https://imgs.soufunimg.com/">
+<link rel="dns-prefetch" href="https://img1.soufunimg.com/">
+<link rel="dns-prefetch" href="https://img1n.soufunimg.com/">
+<link rel="dns-prefetch" href="https://imgd.soufunimg.com/">
+<link rel="dns-prefetch" href="https://imgdn.soufunimg.com/">
+<link rel="dns-prefetch" href="https://img2.soufunimg.com/">
+<link rel="dns-prefetch" href="https://img2s.soufunimg.com/">
+<link rel="dns-prefetch" href="https://flvn.soufunimg.com/">
+<link rel="dns-prefetch" href="https://flvs.soufunimg.com/">
+<link rel="dns-prefetch" href="https://video2n.soufunimg.com/">
+<link rel="dns-prefetch" href="https://video2s.soufunimg.com/">
+<link rel="dns-prefetch" href="https://ssl.google-analytics.com/">
+<link rel="dns-prefetch" href="https://cdnsfb.soufunimg.com/">
+<link rel="dns-prefetch" href="https://img11.soufunimg.com/">
+<link href="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/navigation20141112.css" rel="stylesheet" type="text/css">
+<link href="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/navsupply.css" rel="stylesheet" type="text/css">
+<!-- 新导航0903 begin -->
+
+<div class="newnav20141104">
+	<div class="newnav20141104nr">
+	<input type="hidden" id="channelDsy" name="channelDsy" value="esf">
+	
+		<div class="s1"><a href="http://www.fang.com/"><img src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/navlogo.gif"></a></div>
+		
+		
+				<div class="s2" onmouseover="this.className=&#39;s2 on2014&#39;" onmouseout="this.className=&#39;s2&#39;" id="dsy_H01_01">
+				<div class="s4Box"><a href="https://jh.esf.fang.com//a/fang197879692?_rfss=31&amp;rfss=1-a5c5262e0ab72e3b3c-31#">金华</a><img src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/navicon.gif"></div>
+				<div class="city20141104">
+                  <!--city_list_start-->
+                <!--tab_header_start-->
+            	<!--tab_header_end-->
+<style>.newnav20141104nr .s2 .city20141104{width:330px;}</style>
+				<div class="city20141104nr" id="cityi010" style="width:340px;">
+                <!--tab1_content_start-->
+                <a href="https://esf1.fang.com/" style="width:40px;padding:4px 0 4px 8px;">北京</a>
+                <a href="https://sh.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">上海</a>
+                <a href="https://gz.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">广州</a>
+                <a href="https://sz.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">深圳</a>
+                <a href="https://tj.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">天津</a>
+                <a href="https://cd.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">成都</a>
+                <a href="https://cq.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">重庆</a>
+                <a href="https://wuhan.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">武汉</a>
+                <a href="https://suzhou.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">苏州</a>
+                <a href="https://hz.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">杭州</a>
+                <a href="https://nanjing.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">南京</a>
+                <a href="https://jn.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">济南</a>
+                <a href="https://sjz.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">石家庄</a>
+                <a href="https://xian.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">西安</a>
+                <a href="https://zz.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">郑州</a>
+                <a href="https://wuxi.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">无锡</a>
+                <a href="https://qd.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">青岛</a>
+                <a href="https://nc.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">南昌</a>
+                <a href="https://dg.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">东莞</a>
+                <a href="https://dl.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">大连</a>
+                <a href="https://km.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">昆明</a>
+		<a href="https://xm.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">厦门</a>
+		<a href="https://fz.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">福州</a> 
+		<a href="https://cs.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">长沙</a> 
+		<a href="https://nn.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">南宁</a> 
+		<a href="https://changchun.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">长春</a> 
+		<a href="https://sy.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">沈阳</a> 
+		<a href="https://zh.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">珠海</a>
+                <a href="https://hk.esf.fang.com/" style="width:40px;padding:4px 0 4px 8px;">香港</a>
+                <a href="https://jh.esf.fang.com/newsecond/esfcities.aspx" style="width:80px;float:left;padding-right:20px;" target="_self">更多城市&gt;&gt;</a>
+                <div class="clear"></div>
+				<!--tab1_content_end-->
+                </div>
+				<div class="city20141104nr" id="cityi011" style="display:none">
+                <!--tab2_content_start-->
+                   
+				<!--tab2_content_end-->
+                </div>
+                <div class="city20141104nr" id="cityi012" style="display:none">
+                <!--tab3_content_start-->             
+                <!--tab3_content_end-->
+                </div>
+                <div class="city20141104nr" id="cityi013" style="display:none">
+                <!--tab4_content_start-->
+                <!--tab4_content_end-->
+                </div>
+																
+																
+					<!--more_tab_content-->
+                <!--city_list_end-->
+				</div>
+
+		</div>
+		
+				<div class="s5" track-id="www1" style="background-image:none" id="dsy_H01_02">
+		        	<div class="s4Box"><a href="http://jh.fang.com/" target="_self">首页</a></div>
+		        	
+		        </div>
+			
+			
+        <div class="s5" track-id="newhouse" id="dsy_H01_03">
+        	<div class="s4Box"><a href="https://jh.newhouse.fang.com/" target="_self">新房</a></div>
+                  	
+            <div class="listBox">
+            	<ul>
+                  	
+                    	<li>
+                    		<a target="_self" href="https://jh.newhouse.fang.com/house/saledate/%b1%be%d4%c2.htm">
+                    		
+                    			本月开盘
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.newhouse.fang.com/asp/trans/buynewhouse/default.htm">
+                    		
+                    			热门楼盘
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.newhouse.fang.com/top/">
+                    		
+                    			新房排行榜
+                    		</a>
+                    	</li>
+                	
+                  	
+                </ul>
+            </div>
+                  	
+        </div>
+        
+		<div class="s6 bj2014" track-id="esf" id="dsy_H01_04">
+        	<div class="s4Box">	<a href="https://jh.esf.fang.com/" target="_self">二手房</a></div>
+            	    
+            <div class="listBox">
+            	<ul>
+                  	
+                    	<li>
+                    		<a target="_self" href="https://jh.esf.fang.com/house/">
+                    		
+                    			在售房源
+                    		</a>
+                    		
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.esf.fang.com/housing/">
+                    		
+                    			找小区
+                    		</a>
+                    		
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.esf.fang.com/agenthome/">
+                    		
+                    			找经纪人
+                    		</a>
+                    		
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.esf.fang.com/villa/">
+                    		
+                    			找别墅
+                    		</a>
+                    		
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.esf.fang.com/top/">
+                    		
+                    			二手房排行榜
+                    		</a>
+                    		
+                    	</li>
+                	
+                    	<li style="margin-bottom:8px">
+                    		<a target="_self" href="https://jh.esf.fang.com/usercenter/HousePublish/Ebhousepublish/">
+                    		
+                    			
+                    				<div class="butstyle20141104">我要卖房</div>
+                    				
+                    		</a>
+                    		
+                    	</li>
+                	
+                  	
+              </ul>
+            </div>
+                  	           	
+        </div>	
+		
+		<div class="s5" track-id="zu" id="dsy_H01_05">
+        	<div class="s4Box"><a href="https://jh.zu.fang.com/" target="_self">租房</a></div>
+            	
+            <div class="listBox">
+            	<ul>
+                  	
+                    	<li>
+                    		<a target="_self" href="https://jh.zu.fang.com/house/n31/">
+                    		
+                    			整租房源
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.zu.fang.com/villa/">
+                    		
+                    			别墅房源
+                    		</a>
+                    	</li>
+                	
+                    	<li style="margin-bottom:8px">
+                    		<a target="_self" href="https://jh.zu.fang.com/chuzuinput/">
+                    		
+                    			
+                    				<div class="butstyle20141104">免费发布出租</div>
+                    				
+                    		</a>
+                    	</li>
+                	
+                </ul>
+            </div>
+                  	
+        </div>
+		
+		<div class="s6" track-id="fangjia" style="background-image:none" id="dsy_H01_06">
+        	<div class="s4Box"><a href="https://fangjia.fang.com/" target="_self">查房价</a> </div>
+            
+        </div>	
+		
+		<div class="s7" track-id="home" id="dsy_H01_07">
+        	<div class="s4Box"><a href="https://jh.home.fang.com/" target="_self">装修家居</a></div>
+            	
+            <div class="listBox">
+            	<ul>
+                  	
+                    	<li>
+                    		<a target="_self" href="https://jh.home.fang.com/zhuangxiu/">
+                    			家装案例
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://home.fang.com/album/jh/">
+                    			装修效果图
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://home.fang.com/sjs/jh/">
+                    			找设计师
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://gongzhang.fang.com/jh/list/0_0_0_0_1_0/">
+                    			找工长
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.home.fang.com/jiancai/">
+                    			抢购建材家具
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.home.fang.com/news/">
+                    			家居资讯
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.home.fang.com/jiancai/shop/">
+                    			建材店铺
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://home.fang.com/newdesign.htm?postion=daohang">
+                    			免费设计
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://home.fang.com/newyanfang.htm?postion=daohang">
+                    			免费验房
+                    		</a>
+                    	</li>
+                	
+                    	<li style="margin-bottom:8px">
+                    		<a target="_self" href="https://home.fang.com/zxbj/?from=daohang">
+                    			
+                    				<div class="butstyle20141104">装修报价</div>
+                    				
+                    		</a>
+                    	</li>
+                	
+                </ul>
+            </div>
+                    
+        </div>		
+		
+		<div class="s6" track-id="office" id="dsy_H01_08">
+        	<div class="s4Box"><a href="https://jh.office.fang.com/" target="_self">写字楼</a></div>
+            	
+            <div class="listBox">
+            	<ul>
+                  	
+                    	<li>
+                    		<a target="_self" href="https://jh.office.fang.com/zu/house/">
+                    		
+                    			写字楼出租
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.office.fang.com/shou/house/">
+                    		
+                    			写字楼出售
+                    		</a>
+                    	</li>
+                	
+                </ul>
+            </div>
+                  	    
+        </div>					
+		
+		<div class="s5" track-id="shop" id="dsy_H01_09">
+        	<div class="s4Box"><a href="https://jh.shop.fang.com/" target="_self">商铺</a></div>
+            	
+            <div class="listBox">
+            	<ul>
+                  	
+                    	<li>
+                    		<a target="_self" href="https://jh.shop.fang.com/zu/house/">
+                    		
+                    			商铺出租
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.shop.fang.com/shou/house/">
+                    		
+                    			商铺出售
+                    		</a>
+                    	</li>
+                	
+                  	
+                </ul>
+            </div>
+                  	    
+        </div>
+		
+		<div class="s7" track-id="bbs" id="dsy_H01_13">
+        	<div class="s4Box">	<a href="https://jh.bbs.fang.com/" target="_self">业主论坛</a></div>
+            	
+            <div class="listBox">
+            	<ul>
+                  	
+                    	<li>
+                    		<a target="_self" href="https://jh.home.fang.com/bbs/">
+                    			装修论坛
+                    		</a>
+                    	</li>
+                	
+                </ul>
+            </div>
+                  	    
+        </div>
+		
+		<div class="s7" track-id="news" id="dsy_H01_14">
+        <div class="s4Box"><a href="https://jh.news.fang.com/" target="_self">房产百科</a></div>
+            	
+            <div class="listBox">
+            	<ul>
+                  	
+                    	<li>
+                    		<a target="_self" href="https://jh.news.fang.com/gdxw.html">
+                    		
+                    			房产快讯
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.news.fang.com/more/32/1.html">
+                    		
+                    			市场
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.news.fang.com/more/35/1.html">
+                    		
+                    			政策
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.news.fang.com/more/739/1.html">
+                    		
+                    			金融
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.news.fang.com/more/738/1.html">
+                    		
+                    			土地
+                    		</a>
+                    	</li>
+                	
+                    	<li>
+                    		<a target="_self" href="https://jh.news.fang.com/more/736/1.html">
+                    		
+                    			公司
+                    		</a>
+                    	</li>
+                	
+                </ul>
+            </div>
+                  	
+        </div>
+		
+		<div class="s5" track-id="more" id="dsy_D01_02">
+        <div class="s4Box"><a id="dsy_D01_91">更多</a></div>
+            	
+            <div class="listBox">
+            	<ul>
+                  	
+	                  <li class="new">
+	                  <div class="s8" onmouseover="this.className=&#39;s8 on&#39;" onmouseout="this.className=&#39;s8&#39;">
+	                    <a href="http://fdc.fang.com/" target="_self">产业</a>
+	                    	
+	                    		<div class="listnBox top2">
+		                    				<ul>
+	                    			
+		          								<li><a href="http://land.fang.com/">土地</a></li>
+		                    				
+		          								<li><a href="http://fdc.fang.com/data/">地产数据</a></li>
+		                    				
+		          								<li><a href="http://fdc.fang.com/wenku/">文库报告</a></li>
+		                    				
+		          								<li><a href="http://fdc.fang.com/index/">房价指数</a></li>
+		                    				
+		          								<li><a href="http://fdc.fang.com/top10/">房企研究</a></li>
+		                    				
+		          								<li><a href="http://fdc.fang.com/data/topdata/housetopall.htm">交易排行榜</a></li>
+		                    				
+									</ul>
+	                    				</div>
+	                    		
+	                    	
+	                  </div>
+	                 </li>
+                	
+	                  <li class="new">
+	                  <div class="s8" onmouseover="this.className=&#39;s8 on&#39;" onmouseout="this.className=&#39;s8&#39;">
+	                    <a href="http://world.fang.com/" target="_self">海外房产</a>
+	                    	
+									<div class="listnBox top3">
+									<ul>
+										<li><a href="https://us.fang.com/" target="_self">美国房产</a></li>
+										<li><a href="https://au.fang.com/" target="_self">澳大利亚房产</a></li>
+										<li><a href="https://japan.fang.com/" target="_self">日本房产</a></li>
+										<li><a href="https://uae.fang.com/" target="_self">阿联酋房产</a></li>
+										<li><a href="https://uk.fang.com/" target="_self">英国房产</a></li>
+										<!-- <li><a href="https://thailand.fang.com" target="_self">泰国房产</a></li> -->
+										<li><a href="https://malaysia.fang.com/" target="_self">马来西亚房产</a></li>
+										<li><a href="https://singapore.fang.com/" target="_self">新加坡房产</a></li>
+										<li><a href="https://cambodia.fang.com/" target="_self">柬埔寨房产</a></li>
+										<li><a href="https://greece.fang.com/" target="_self">希腊房产</a></li>
+										<li><a href="https://philippines.fang.com/" target="_self">菲律宾房产</a></li>
+										<li><a href="https://vietnam.fang.com/" target="_self">越南房产</a></li>
+										
+									</ul>
+									</div>
+	                    		
+	                    	
+	                  </div>
+	                 </li>
+                	
+                </ul>
+            </div>
+                  	
+        </div>
+		
+<div id="loginBarNew"><div class="s4a" onmouseover="this.className=&#39;s4a on2014&#39;" onmouseout="this.className=&#39;s4a&#39;" style="background-image: none"><div class="s4Box"> <a href="https://ebs.home.fang.com/" title="家居云" target="_blank" id="esfjh_D01_17">家居云</a></div></div><div class="s4a" onmouseover="this.className=&#39;s4a on2014&#39;" onmouseout="this.className=&#39;s4a&#39;" style="background-image: none"><div class="s4Box"> <a href="https://open.fang.com/" title="开发云" target="_blank" id="esfjh_D01_17">开发云</a></div></div><div class="s4a" onmouseover="this.className=&#39;s4a on2014&#39;" onmouseout="this.className=&#39;s4a&#39;" style="background-image: none"><div class="s4Box"> <a href="https://agent.fang.com/" title="经纪云" target="_blank" id="esfjh_D01_17">经纪云</a></div></div><div class="sline21041104"></div><div class="s4a" onmouseover="this.className=&#39;s4a on2014&#39;" onmouseout="this.className=&#39;s4a&#39;" style="background-image: none"><div class="s4Box"> <a href="https://passport.fang.com/?backurl=https://jh.esf.fang.com//a/fang197879692?_rfss=31&amp;rfss=1-a5c5262e0ab72e3b3c-31" title="登录" target="_blank" id="esfjh_D01_16">登录</a></div><div class="listBox"><ul><li><a href="https://my.fang.com/">我的房天下</a></li></ul></div></div></div>
+<div class="clear"></div>
+		<input type="hidden" id="serviceline" value="esf">
+	</div>
+</div>
+<script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/newnav20141111.js.下载"></script>
+
+<!-- login js start -->
+
+<script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loginUnited.js.下载" charset="GBK"></script>
+
+<!-- login js end -->
+
+<!-- 新导航0903 end  -->
+
+<!--切换城市js start-->
+<script type="text/javascript">
+    var citychange = document.getElementById("moreBoxcity");
+    var timeout;
+    function hiddenMoreBoxto() {
+        citychange.style.display = "none";
+        timeout = setTimeout("hiddenMoreBoxto", 100)
+    }
+    function showMoreBoxto() {
+        window.clearTimeout(timeout);
+        citychange.style.display = "";
+    }
+
+    try {
+        PublicNav.select('esf');
+    }
+    catch (e) { }
+</script>
+<!--切换城市js end-->
+<!-- 新导航0903 end -->
+<!--UV code begin-->
+<script type="text/javascript">
+    try {
+        var _dctc = _dctc || {};
+        _dctc._account = _dctc._account || ['UA-24140496-1', 'UA-24830445-1', 'UA-24830738-1'];
+        _dctc.bid = 12;
+        _dctc.isNorth = _dctc.isNorth || 'N';
+        var dutyed = '';
+        if (dutyed != "") {
+            dutyed = dutyed + "@soufun.com";
+            _dctc.urlowner = dutyed;
+        }
+        var pageid = '';
+        if (pageid != '') {
+            _dctc.pageid = pageid;
+        }
+        _dctc.page = 'esf_jjr^xq_pc';
+        _dctc.city = '%e9%87%91%e5%8d%8e';
+        _dctc.business = 'E';
+        if (typeof chafangjiaai != "undefined") {
+            if (chafangjiaai == "1") {
+                _dctc.newsfrom = "esfcfj";
+            } else if (chafangjiaai == "esfxiaoqu") {
+                _dctc.newsfrom = chafangjiaai;
+            } else if (chafangjiaai == "esfaiadmin") {
+                _dctc.newsfrom = "aishangquanzt";
+            }
+        }
+
+    }
+    catch (e) { }
+
+</script>
+<script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/uvbforpc.js.下载"></script>
+<!--UV code end-->
+
+    <!--头文件结束-->
+    <!--topheader end-->
+    <!--nav start-->
+    
+    <!--nav end-->
+    <!--用户行为分析开始-->
+    <!--utf-8 编码-->
+<script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/convertutf8.js.下载"></script><script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/json2.js.下载"></script> 
+<script type="text/javascript">
+    _ub.city = '金华';
+    if (false||false) {
+        _ub.biz = 'g';
+    }
+    else
+    {
+        _ub.biz = 'e';
+    }
+    _ub.location = 1;
+    var ubb = 0;
+    var ubp = {"vwg.page":"esf_jjr^xq_pc","vwe.agentid":"166099556"};
+    if(ubb > -1 && ubp != null && JSON.stringify(ubp) != "{}")
+    {
+        _ub.collect(ubb,ubp);
+    }
+
+    var objcon = document.getElementById("a_savecondition");
+    if(objcon && objcon != null)
+    {
+        objcon.onmouseup=function()
+        {
+            if(ubp && ubp != null)
+            {
+                _ub.collect(2,ubp);
+            }
+        }
+    }
+   
+    //预约看房
+    function AddLookHouseUB()
+    {
+        try {
+            if(jQuery("#hid_lookHouseUBb") && jQuery("#hid_lookHouseUBp")) {
+                var lookHouseUBb = jQuery("#hid_lookHouseUBb").val();
+                var lookHouseUBp = jQuery("#hid_lookHouseUBp").val();
+                if(lookHouseUBp != "{}") {
+                    _ub.collect(parseInt(lookHouseUBb),JSON.parse(lookHouseUBp));
+                }
+            }
+        }
+        catch(err) {
+        }
+    }
+
+    //添加"分享"ub
+    function AddShareUB() {
+        try {
+            if(jQuery("#hid_ShareUBb") && jQuery("#hid_ShareUBp")) {
+                var shareUBb = jQuery("#hid_ShareUBb").val();
+                var shareUBp = jQuery("#hid_ShareUBp").val();
+                if(shareUBp != "{}") {
+                    _ub.collect(parseInt(shareUBb),JSON.parse(shareUBp));
+                }
+            }
+        }
+        catch(err) { 
+        }
+    }
+    //添加"举报"ub
+    function AddJuBaoUB() {
+        try {
+            if(jQuery("#hid_jubaoUbb") && jQuery("#hid_jubaoUbp")) {
+                var jubaoUBb = jQuery("#hid_jubaoUbb").val();
+                var jubaoUBp = jQuery("#hid_jubaoUbp").val();
+                if(jubaoUBp != "{}") {
+                    _ub.collect(parseInt(jubaoUBb),JSON.parse(jubaoUBp));
+                }
+            }
+        }
+        catch(err) { 
+        }
+    }
+
+    //添加"收藏"ub
+    function AddShouCangUB() {
+        try {
+            if(jQuery("#hid_shoucangUBb") && jQuery("#hid_shoucangUBp")) {
+                var shoucangUBb = jQuery("#hid_shoucangUBb").val();
+                var shoucangUBp = jQuery("#hid_shoucangUBp").val();
+                if(shoucangUBp != "{}") {
+                    _ub.collect(parseInt(shoucangUBb),JSON.parse(shoucangUBp));
+                }
+            }
+        }
+        catch(err) { 
+        }
+    }
+    //添加"在线咨询"ub
+    function AddOnlineTalkUB() {
+        try {
+            if(jQuery("#hid_onlineTalkUBb") && jQuery("#hid_onlineTalkUBp")) {
+                var onlineTalkUBb = jQuery("#hid_onlineTalkUBb").val();
+                var onlineTalkUBp = jQuery("#hid_onlineTalkUBp").val();
+                if(onlineTalkUBp != "{}") {
+                    _ub.collect(parseInt(onlineTalkUBb),JSON.parse(onlineTalkUBp));
+                }
+            }
+        }
+        catch(err) {
+        }
+    }
+
+    //添加"经纪人评价"ub
+    //AgentID:经纪人编号,hELevel:评价,hHouseInfoAccuracy:房屋信息真实度,hServiceAttitude:服务态度满意度,hProfessional:业务水平专业度
+    function AddAgentEvaluationUB() {
+        try {
+            var agentEvaluationUBb = 43;
+            var agentEvaluationUBp = { };
+            agentEvaluationUBp["vwe.agentid"] = jQuery("#AgentID").val();
+            switch(jQuery("#hELevel").val()) {
+                case "1":
+                    agentEvaluationUBp["vwe.agentevaluate"] = EncodeUtf8("差评");
+                    break;
+                case "2":
+                    agentEvaluationUBp["vwe.agentevaluate"] = EncodeUtf8("中评");
+                    break;
+                case "3":
+                    agentEvaluationUBp["vwe.agentevaluate"] = EncodeUtf8("好评");
+                    break;
+                default:
+                    agentEvaluationUBp["vwe.agentevaluate"] = EncodeUtf8("好评");
+                    break;
+            }
+            agentEvaluationUBp["vwe.housevalidity"] =jQuery("#hHouseInfoAccuracy").val();
+            agentEvaluationUBp["vwe.servicedegree"] = jQuery("#hServiceAttitude").val();
+            agentEvaluationUBp["vwe.businessdegree"] = jQuery("#hProfessional").val();
+
+            _ub.collect(agentEvaluationUBb, agentEvaluationUBp);
+        }
+        catch(err) {
+        }
+    }
+    function AddInputUB() { 
+        try {
+            if(document.getElementById("hid_inputUBb") && document.getElementById("hid_inputUBp")) {
+                var inputUBb = document.getElementById("hid_inputUBb").value;
+                var inputUBp = document.getElementById("hid_inputUBp").value;
+                if(inputUBp != "{}") {
+                    _ub.collect(parseInt(inputUBb),JSON.parse(inputUBp));
+                    setTimeout(function(){},5000); //延迟500毫秒
+                }
+            }
+        }
+        catch(err) { 
+        }
+    }
+    
+    //添加"地图交通 搜周边"ub
+    function AddMapTrafficUB(ubb,name) {
+        try {
+            if(jQuery("#MapTrafficUBp")) {
+                var mapTrafficUBp = jQuery("#MapTrafficUBp").val();
+                if(mapTrafficUBp != "{}") {
+                    var model = JSON.parse(mapTrafficUBp);
+                    model["vwe.aroundfacility"] = EncodeUtf8(name);
+                    _ub.collect(parseInt(ubb),model);
+                }
+            }
+        }
+        catch(err) { 
+        }
+    }
+    //添加"地图交通 查路线"ub
+    function AddMapRouteUB(ubb,trafficType,startName,endName) {
+        try {
+            if(jQuery("#MapTrafficUBp")) {
+                var mapTrafficUBp = jQuery("#MapTrafficUBp").val();
+                if(mapTrafficUBp != "{}") {
+                    var model = JSON.parse(mapTrafficUBp);
+                    model["vwe.arriveway"] = EncodeUtf8(trafficType);
+                    model["vwe.startaddress"] = EncodeUtf8(startName);
+                    model["vwe.endaddress"] = EncodeUtf8(endName);
+                    _ub.collect(parseInt(ubb),model);
+                }
+            }
+        }
+        catch(err) { 
+            
+        }
+    }
+    //议价"ub
+    function AddbargainingUB(name, mobile, price, email) {
+        try {
+            if(jQuery("#bargainingUBb")&&jQuery("#bargainingUBp")) {
+                var bargainingUBb = jQuery("#bargainingUBb").val();
+                var bargainingUBp = jQuery("#bargainingUBp").val();
+                if(bargainingUBp != "{}") {
+                    var model = JSON.parse(bargainingUBp);
+                  
+                    model["vwe.name"] = EncodeUtf8(name);
+                    model["vwe.totalprice"] = EncodeUtf8(price);
+                    model["vwe.phone"] = mobile;
+                    model["vwe.mail"] = email;
+                    _ub.collect(parseInt(bargainingUBb),model);
+                }
+            }
+        }
+        catch(err) { 
+            
+        }
+    }
+
+    //备注"ub
+    function AddRemarkUB() {
+        try {
+            if( document.getElementById("RemarkUBB")&&document.getElementById("RemarkUBP")) {
+                var remarkUBB = document.getElementById("RemarkUBB").value;
+                var remarkUBP = document.getElementById("RemarkUBP").value;
+                if(remarkUBP != "{}") {
+                    var model = JSON.parse(remarkUBP);
+                    _ub.collect(parseInt(remarkUBB),model);
+                }
+            }
+        }
+        catch(err) { 
+            
+        }
+    }
+
+    // 直约业主"ub
+    function AddLookOwnerUB(phone) {
+        try {
+            if( document.getElementById("hid_lookOwnerUBb")&&document.getElementById("hid_lookOwnerUBp")) {
+                var lookOwnerUBB = document.getElementById("hid_lookOwnerUBb").value;
+                var lookOwnerUBP = document.getElementById("hid_lookOwnerUBp").value;
+                if(lookOwnerUBP != "{}") {
+                    var model = JSON.parse(lookOwnerUBP);
+                    model["vwe.phone"] = phone;
+                    _ub.collect(lookOwnerUBB,model);
+                }
+            }
+        }
+        catch(err) { 
+            
+        }
+    }
+
+    // 房源打印"ub
+    function AddPrintUB() {
+        try {
+                if( document.getElementById("PrintUBb")&&document.getElementById("PrintUBp")) {
+                    var PrintUBb = document.getElementById("PrintUBb").value;
+                    var PrintUBp = document.getElementById("PrintUBp").value;
+                    if(PrintUBp != "{}") {
+                        var model = JSON.parse(PrintUBp);
+                        _ub.collect(PrintUBb,model);
+                }
+            }
+        }
+        catch(err) { 
+            
+        }
+    }
+    // 房源发送邮箱"ub
+    function AddMailUB(mail) {
+        try {
+            if( document.getElementById("MailUBb")&&document.getElementById("MailUBp")) {
+                var MailUBb = document.getElementById("MailUBb").value;
+                var MailUBp = document.getElementById("MailUBp").value;
+                if(MailUBp != "{}") {
+                    var model = JSON.parse(MailUBp);
+                    model["vwe.mail"] = mail;
+                    _ub.collect(MailUBb,model);
+                }
+            }
+        }
+        catch(err) { 
+            
+        }
+    }
+    //登录ub
+    function AddLoginUB(un) {
+        try {
+            var vb=document.getElementById("__vb");
+            if (vb&&un != "" && un != undefined) {
+                var model = {};
+                 model["vwe.username"] = un;
+                 model["vwg.page"] = vb.src.substr(vb.src.indexOf("?")+1).split('=')[1];
+                _ub.collect(9, model);
+
+            }   
+        } catch (e) {
+
+        }  
+    }
+    
+    function AddEbInputUB()
+    {
+        try {
+            var ebInputUBb = 46;
+            var ebInputUBp = { };
+
+            ebInputUBp["vwg.page"] = "ehhelpsell";
+            ebInputUBp["vwe.projectname"] = EncodeUtf8(jQuery("#input_House_ProjName").val());
+            
+            var loudong="";
+            if(jQuery("#input_House_Dong"))
+            {
+                loudong+=jQuery("#input_House_Dong").val() + "栋";
+            }
+            //if(jQuery("#input_House_danyuan"))
+            //{
+            //    loudong+=jQuery("#input_House_danyuan").val() + "单元";
+            //}
+            //if(jQuery("#input_House_Fang"))
+            //{
+            //    loudong + =jQuery("#input_House_Fang").val()+"室";
+            //}
+            if(loudong != "")
+            {
+                ebInputUBp["vwe.buildingnum"] = EncodeUtf8(loudong);
+            }
+
+            var huxing="";
+            huxing+=jQuery("#input_House_Room").val()+"室";
+            //huxing+=jQuery("#input_House_Hall").val()+"厅";
+            //huxing+=jQuery("#input_House_Toilet").val()+"卫";
+            if(huxing !="")
+            {ebInputUBp["vwe.housetype"] = EncodeUtf8(huxing);
+            }
+
+            ebInputUBp["vwe.area"]=jQuery("#input_House_BuildingArea").val();
+            ebInputUBp["vwe.floornum"]=jQuery("#input_House_Floor").val();
+            ebInputUBp["vwe.totalfloor"]=jQuery("#input_House_TotalFloor").val();
+            ebInputUBp["vwe.direction"]=EncodeUtf8(jQuery("#slt_House_Forward_Select").html());
+            ebInputUBp["vwe.totalprice"]=jQuery("#input_House_Price").val();
+            if(parseFloat(jQuery("#input_House_BuildingArea").val()) > 0 )
+            {
+                ebInputUBp["vwe.unitprice"]=(jQuery("#input_House_Price").val() * 10000)/jQuery("#input_House_BuildingArea").val();
+            }
+            ebInputUBp["vwe.name"]=jQuery("#input_LinkMan").val();
+            ebInputUBp["vwe.phone"]=jQuery("#input_MobileCode").val();
+
+            _ub.collect(ebInputUBb, ebInputUBp);
+        }
+        catch(err) { 
+        }
+    }
+</script>
+
+    <!--用户行为分析结束-->
+    <div class="contentwrap">
+        <!-- 左侧页面  start-->
+        <div class="conleft">
+            <!-- 经纪人信息 start-->
+            <div class="conltop clearfix">
+                <img class="topeople" title="" alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/a400c643-8e23-4c2e-99f7-22bc4f48f322.jpg">
+                <!-- 默认未上传个人图片时的图片 -->
+                <!-- <img src="images/mine_nopic.jpg" alt="" title="" class="topeople" /> -->
+                <ul class="person">
+                    
+                    <li class="name"><b id="agentname">郭兰</b><a href="javascript:void(0);"><img id="onlineimg" name="166099556online" title="点击在线咨询" alt="点击在线咨询" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/icon_fangliao.png" class="ml20"></a></li>
+                    <li>联系电话：<b class="redword">13567908808</b></li>
+                    
+                    <li class="w60">主营商圈：<span class="grayword"><a target="_blank" href="https://jh.esf.fang.com/house-a0211-b015047/">江南</a></span></li>
+                    
+                    <li id="importantpli" class="w60" style="">重点小区：<span class="grayword" id="importantgrayword"><span style="padding-right:10px;">金地艺境(9)</span><span style="padding-right:10px;">金地都会之光(8)</span><span style="padding-right:10px;">保集江湾壹号(8)</span></span></li>
+                    
+                </ul>
+            </div>
+            <!-- 经纪人信息 end-->
+            
+            <!-- 标题信息切换 start-->
+            <ul class="turntitle mt20 clearfix" id="agentinfoandhouseinfo">
+                <li id="esfhousetab" class="liOn"><a href="javascript:;">二手房房源</a></li>
+                <li id="renthousetab" style="display: none;"><a href="javascript:;">租房房源</a></li>
+                <li id="agentinfotab"><a href="javascript:;">经纪人信息</a></li>
+                <li id="agenterrortab" style="display: none;"><a href="javascript:;">违规记录</a></li>
+                <li id="agentdoufangtab" style="display: none;"><a href="javascript:;">Ta的抖房</a></li>
+            </ul>
+            <!-- 标题信息切换 end -->
+            <!-- 列表内容 start-->
+            <div class="listContent clearfix">
+                <!-- 二手房列表页 start -->
+                <div class="listContent-item current" id="esfhouseitem">
+                    
+<!-- 筛选 start -->
+<div class="optionWrap clearfix">
+    <div class="option clearfix">
+        <span>筛选：</span>
+        <div class="select_box">
+            <div class="tag_select" id="esftar_purpose">住宅</div>
+            <ul class="tag_options" id="esftag_optionspurpose">
+                <li><a href="javascript:;">住宅</a></li>
+                <li><a href="javascript:;">别墅</a></li>
+                <li><a href="javascript:;">商铺</a></li>
+                <li><a href="javascript:;">写字楼</a></li>
+            </ul>
+        </div>
+        
+        <div class="select_box">
+            <div class="tag_select" id="esftag_projname">小区</div>
+            <ul class="tag_options" id="esftag_optionsprojname">
+                <li><a value="全部" href="javascript:;">全部</a></li>
+                
+                <li><a value="金地艺境" href="javascript:;">金地艺境</a></li>
+                <li><a value="金地都会之光" href="javascript:;">金地都会之光</a></li>
+                <li><a value="保集江湾壹号" href="javascript:;">保集江湾壹号</a></li>
+                <li><a value="缤虹星城" href="javascript:;">缤虹星城</a></li>
+                <li><a value="东辰·紫金湾" href="javascript:;">东辰·紫金湾</a></li>
+                <li><a value="三联·蔚蓝海岸" href="javascript:;">三联·蔚蓝海岸</a></li>
+                <li><a value="绿城·金华御园" href="javascript:;">绿城·金华御园</a></li>
+                <li><a value="金源新天地" href="javascript:;">金源新天地</a></li>
+                <li><a value="万固西江月" href="javascript:;">万固西江月</a></li>
+                <li><a value="万泰公园大道" href="javascript:;">万泰公园大道</a></li>
+                <li><a value="心怡家园" href="javascript:;">心怡家园</a></li>
+                <li><a value="申华翡翠城" href="javascript:;">申华翡翠城</a></li>
+                <li><a value="四季荣域金东" href="javascript:;">四季荣域金东</a></li>
+                <li><a value="金厦银湖城" href="javascript:;">金厦银湖城</a></li>
+                <li><a value="昆仑大厦" href="javascript:;">昆仑大厦</a></li>
+                <li><a value="李渔湾大厦" href="javascript:;">李渔湾大厦</a></li>
+                <li><a value="丽泽花园" href="javascript:;">丽泽花园</a></li>
+                <li><a value="柳湖花园" href="javascript:;">柳湖花园</a></li>
+                <li><a value="茂新四季尊域" href="javascript:;">茂新四季尊域</a></li>
+                <li><a value="美的金宸府" href="javascript:;">美的金宸府</a></li>
+                <li><a value="融创晓郡花园" href="javascript:;">融创晓郡花园</a></li>
+                <li><a value="东华家园" href="javascript:;">东华家园</a></li>
+                <li><a value="都市郦景园" href="javascript:;">都市郦景园</a></li>
+            </ul>
+        </div>
+        
+        <div class="select_box">
+            <div class="tag_select" id="esftag_price">价格</div>
+            <ul class="tag_options" id="esftag_optionsprice">
+                 <li><a value="全部" href="javascript:;">全部</a></li>
+                
+                <li><a value="0-50" href="javascript:;">50万以下</a></li>
+                
+                <li><a value="50-80" href="javascript:;">50-80万</a></li>
+                
+                <li><a value="80-100" href="javascript:;">80-100万</a></li>
+                
+                <li><a value="100-120" href="javascript:;">100-120万</a></li>
+                
+                <li><a value="120-150" href="javascript:;">120-150万</a></li>
+                
+                <li><a value="150-200" href="javascript:;">150-200万</a></li>
+                
+                <li><a value="200-300" href="javascript:;">200-300万</a></li>
+                
+                <li><a value="300-0" href="javascript:;">300万以上</a></li>
+                
+            </ul>
+        </div>
+        
+        <div class="select_box">
+            <div class="tag_select" id="esftag_room">户型</div>
+            <ul class="tag_options" id="esftag_optionsroom">
+                 <li><a value="全部" href="javascript:;">全部</a></li>
+                
+                <li><a value="1" href="javascript:;">一居</a></li>
+                
+                <li><a value="3" href="javascript:;">三居</a></li>
+                
+                <li><a value="4" href="javascript:;">四居</a></li>
+                
+                <li><a value="5" href="javascript:;">五居</a></li>
+                
+                <li><a value="99" href="javascript:;">五居以上</a></li>
+                
+            </ul>
+        </div>
+        
+        <div class="select_box">
+            <div class="tag_select" id="esftag_area">面积</div>
+            <ul class="tag_options" id="esftag_optionsarea">
+                 <li><a value="全部" href="javascript:;">全部</a></li>
+                
+                <li><a value="0-50" href="javascript:;">50平米以下</a></li>
+                
+                <li><a value="50-70" href="javascript:;">50-70平米</a></li>
+                
+                <li><a value="70-90" href="javascript:;">70-90平米</a></li>
+                
+                <li><a value="90-110" href="javascript:;">90-110平米</a></li>
+                
+                <li><a value="110-130" href="javascript:;">110-130平米</a></li>
+                
+                <li><a value="130-150" href="javascript:;">130-150平米</a></li>
+                
+                <li><a value="150-200" href="javascript:;">150-200平米</a></li>
+                
+                <li><a value="200-300" href="javascript:;">200-300平米</a></li>
+                
+                <li><a value="300-0" href="javascript:;">300平米以上</a></li>
+                
+            </ul>
+        </div>
+        
+        <div class="fl searchs">
+            <input type="button" class="searchBtn" id="esfsearchBtn">
+        </div>
+    </div>
+</div>
+<!-- 筛选 end -->
+<!-- 排序 start-->
+<div class="sort clearfix">
+    <div class="sortLeft">共有<span class="redword" id="allhousecount">60</span>套符合要求的房源</div>
+    <div class="sortRight">
+        
+        <a href="javascript:;">排序：<span class="redword" id="esforderbymoren">默认</span></a>
+        <a href="javascript:;" class="img" id="esforderbyarea">面积</a>
+        <a href="javascript:;" class="img" id="esforderbyprice">价格</a>
+        
+    </div>
+</div>
+<!-- 排序 end -->
+
+<!-- 二手房房源信息 start-->
+<div class="houseList" id="esfhouselist">
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393703930.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M10/35/79c8020115cb46d3bc248e7fdb9ec754.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">18</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="心怡家园 新房源 6+7复式 带露台 带附房 上证199平" href="https://jh.esf.fang.com/chushou/3_393703930.htm" target="_blank">心怡家园 新房源 6+7复式 带露台 带附房 上证199平</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南向
+                <span class="line">|</span>建筑年代：2006
+            </p>
+            <p class="mt10">
+                <a title="心怡家园" href="https://jh.esf.fang.com/house-xm2017277952/" target="_blank"><span>心怡家园</span></a>
+                <span title="金东--------------" class="iconAdress ml10 gray9">金东--------------</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>117㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">175</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    14957元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393704725.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M10/38/96c0bf7ff6154cbcb36a21d1e272e8ca/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M10/38/96c0bf7ff6154cbcb36a21d1e272e8ca.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">12</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="柳湖花园 3房,带附房 不沿街 拎包即住 精致装修" href="https://jh.esf.fang.com/chushou/3_393704725.htm" target="_blank">柳湖花园 3房,带附房 不沿街 拎包即住 精致装修</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2014
+            </p>
+            <p class="mt10">
+                <a title="柳湖花园" href="https://jh.esf.fang.com/house-xm2017093792/" target="_blank"><span>柳湖花园</span></a>
+                <span title="江北-丹光西路118号" class="iconAdress ml10 gray9">江北-丹光西路118号</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>151㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">175</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    11589元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393714729.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M11/19/bc408a2f62e94a98acfa2832eb1e7829/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M11/19/bc408a2f62e94a98acfa2832eb1e7829.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">6</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="金地艺境大3房,可考金外,只要160万 毛坯 急售" href="https://jh.esf.fang.com/chushou/3_393714729.htm" target="_blank">金地艺境大3房,可考金外,只要160万 毛坯 急售</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南向
+                <span class="line">|</span>建筑年代：2013
+            </p>
+            <p class="mt10">
+                <a title="金地艺境" href="https://jh.esf.fang.com/house-xm2017171006/" target="_blank"><span>金地艺境</span></a>
+                <span title="金东-金华市金东区光南路与博士路交叉口(金一中斜对" class="iconAdress ml10 gray9">金东-金华市金东区光南路与博士路交叉口(金一中...</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>89㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">160</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    17978元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393708929.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M10/56/aa25c19b97484a138a690c562b30724e/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M10/56/aa25c19b97484a138a690c562b30724e.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">10</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="金地艺境 金外隔壁,金地艺境四房两厅,一线江景房" href="https://jh.esf.fang.com/chushou/3_393708929.htm" target="_blank">金地艺境 金外隔壁,金地艺境四房两厅,一线江景房</a>
+            </p>
+            <p class="mt12">
+                4室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2017
+            </p>
+            <p class="mt10">
+                <a title="金地艺境" href="https://jh.esf.fang.com/house-xm2017171006/" target="_blank"><span>金地艺境</span></a>
+                <span title="金东-金华市金东区光南路与博士路交叉口(金一中斜对" class="iconAdress ml10 gray9">金东-金华市金东区光南路与博士路交叉口(金一中...</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>121㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">236</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    19504元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393833031.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/5/M10/14/4444b1b626544a7e876d9f8c7f180ce0/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/5/M10/14/4444b1b626544a7e876d9f8c7f180ce0.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">4</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="四季荣域270万4室2厅2卫毛坯复式实用200平" href="https://jh.esf.fang.com/chushou/3_393833031.htm" target="_blank">四季荣域270万4室2厅2卫毛坯复式实用200平</a>
+            </p>
+            <p class="mt12">
+                4室2厅
+                <span class="line">|</span>南向
+                <span class="line">|</span>建筑年代：2014
+            </p>
+            <p class="mt10">
+                <a title="四季荣域金东" href="https://jh.esf.fang.com/house-xm2017096868/" target="_blank"><span>四季荣域金东</span></a>
+                <span title="金东-李渔东路与康济街交叉口" class="iconAdress ml10 gray9">金东-李渔东路与康济街交叉口</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    <span class="colorPink note">满二</span>
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>169㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">270</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    15976元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393707492.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M10/50/22be0920cca44d5a96c006038b1334d8/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M10/50/22be0920cca44d5a96c006038b1334d8.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">6</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="金地都会之光17000均万达商圈一手房房源 随时看 团购价" href="https://jh.esf.fang.com/chushou/3_393707492.htm" target="_blank">金地都会之光17000均万达商圈一手房房源 随时看 团购价</a>
+            </p>
+            <p class="mt12">
+                4室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2018
+            </p>
+            <p class="mt10">
+                <a title="金地都会之光" href="https://jh.esf.fang.com/house-xm2016200248/" target="_blank"><span>金地都会之光</span></a>
+                <span title="金东-建才路北侧、大堰河街东侧、康济街西侧" class="iconAdress ml10 gray9">金东-建才路北侧、大堰河街东侧、康济街西侧</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>85㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">153</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    18000元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393712903.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M11/12/c073d4c0f1fb488d826e5e6b5837f615/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M11/12/c073d4c0f1fb488d826e5e6b5837f615.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">8</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="紫金湾3期81平实用100平3房 随时看房 多套备选" href="https://jh.esf.fang.com/chushou/3_393712903.htm" target="_blank">紫金湾3期81平实用100平3房 随时看房 多套备选</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2013
+            </p>
+            <p class="mt10">
+                <a title="东辰·紫金湾" href="https://jh.esf.fang.com/house-xm2017094162/" target="_blank"><span>东辰·紫金湾</span></a>
+                <span title="金东-西邻政和街、东至大堰河街、北依艾青路、南接宋" class="iconAdress ml10 gray9">金东-西邻政和街、东至大堰河街、北依艾青路、南...</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>89㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">168</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    18876元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393831848.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/5/M10/8/9f6fc1a33a864407a4044f14c7e10844/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/5/M10/8/9f6fc1a33a864407a4044f14c7e10844.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">10</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="蔚蓝海岸 4室2厅2卫毛坯,舒适,视野开阔 带车位" href="https://jh.esf.fang.com/chushou/3_393831848.htm" target="_blank">蔚蓝海岸 4室2厅2卫毛坯,舒适,视野开阔 带车位</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2015
+            </p>
+            <p class="mt10">
+                <a title="三联·蔚蓝海岸" href="https://jh.esf.fang.com/house-xm2017103546/" target="_blank"><span>三联·蔚蓝海岸</span></a>
+                <span title="金东-北临金瓯路,南临义乌江畔" class="iconAdress ml10 gray9">金东-北临金瓯路,南临义乌江畔</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>142㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">198</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    13944元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393704254.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M10/37/2db7123c75c6405f9243c3dfc1360993/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M10/37/2db7123c75c6405f9243c3dfc1360993.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">6</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="房主出售翡翠城3室2厅1卫毛坯,超低价 带附房 118平" href="https://jh.esf.fang.com/chushou/3_393704254.htm" target="_blank">房主出售翡翠城3室2厅1卫毛坯,超低价 带附房 118平</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南向
+                <span class="line">|</span>建筑年代：2014
+            </p>
+            <p class="mt10">
+                <a title="申华翡翠城" href="https://jh.esf.fang.com/house-xm2016322822/" target="_blank"><span>申华翡翠城</span></a>
+                <span title="金东-金东区新城区" class="iconAdress ml10 gray9">金东-金东区新城区</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>118㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">132</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    11186元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393712238.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M11/9/4099e280ff364c1a9c6017c83c6d55ac/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M11/9/4099e280ff364c1a9c6017c83c6d55ac.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">13</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="紫金湾,坐拥轻轨口俯瞰金华江,11月底开盘,优惠大" href="https://jh.esf.fang.com/chushou/3_393712238.htm" target="_blank">紫金湾,坐拥轻轨口俯瞰金华江,11月底开盘,优惠大</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2013
+            </p>
+            <p class="mt10">
+                <a title="东辰·紫金湾" href="https://jh.esf.fang.com/house-xm2017094162/" target="_blank"><span>东辰·紫金湾</span></a>
+                <span title="金东-西邻政和街、东至大堰河街、北依艾青路、南接宋" class="iconAdress ml10 gray9">金东-西邻政和街、东至大堰河街、北依艾青路、南...</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>89㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">173</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    19438元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393710862.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M11/4/1edeaac5c1e048849fa85a24ddbbac35/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M11/4/1edeaac5c1e048849fa85a24ddbbac35.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">6</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="东方兰庭旁 前三甲物业,精装交付,小区自带游泳池 随时看" href="https://jh.esf.fang.com/chushou/3_393710862.htm" target="_blank">东方兰庭旁 前三甲物业,精装交付,小区自带游泳池 随时看</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2014
+            </p>
+            <p class="mt10">
+                <a title="金地都会之光" href="https://jh.esf.fang.com/house-xm2016200248/" target="_blank"><span>金地都会之光</span></a>
+                <span title="金东-建才路北侧、大堰河街东侧、康济街西侧" class="iconAdress ml10 gray9">金东-建才路北侧、大堰河街东侧、康济街西侧</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>103㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">170</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    16505元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393712576.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M11/10/78e449051dad4af4b2e1e477b35edea0/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M11/10/78e449051dad4af4b2e1e477b35edea0.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">7</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="紫金湾紫金墅新房 复式139复式在售 81-139平任选" href="https://jh.esf.fang.com/chushou/3_393712576.htm" target="_blank">紫金湾紫金墅新房 复式139复式在售 81-139平任选</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2013
+            </p>
+            <p class="mt10">
+                <a title="东辰·紫金湾" href="https://jh.esf.fang.com/house-xm2017094162/" target="_blank"><span>东辰·紫金湾</span></a>
+                <span title="金东-西邻政和街、东至大堰河街、北依艾青路、南接宋" class="iconAdress ml10 gray9">金东-西邻政和街、东至大堰河街、北依艾青路、南...</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>89㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">172</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    19326元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393702830.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M10/30/8407e89a92b6464bae8d93f67c2c0b0c/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M10/30/8407e89a92b6464bae8d93f67c2c0b0c.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">16</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="万达轻轨附近江湾壹号 诚心出售人民医院江景" href="https://jh.esf.fang.com/chushou/3_393702830.htm" target="_blank">万达轻轨附近江湾壹号 诚心出售人民医院江景</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2018
+            </p>
+            <p class="mt10">
+                <a title="保集江湾壹号" href="https://jh.esf.fang.com/house-xm2016161468/" target="_blank"><span>保集江湾壹号</span></a>
+                <span title="金东-东市南街与丹溪路交汇处" class="iconAdress ml10 gray9">金东-东市南街与丹溪路交汇处</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>131㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">348</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    26565元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393705393.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M10/41/09aaff0212664a36a0bb96ce92c04abb/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M10/41/09aaff0212664a36a0bb96ce92c04abb.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">11</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="金地都会之光轻轨旁精装修交付找我拿团购价" href="https://jh.esf.fang.com/chushou/3_393705393.htm" target="_blank">金地都会之光轻轨旁精装修交付找我拿团购价</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南向
+                <span class="line">|</span>建筑年代：2019
+            </p>
+            <p class="mt10">
+                <a title="金地都会之光" href="https://jh.esf.fang.com/house-xm2016200248/" target="_blank"><span>金地都会之光</span></a>
+                <span title="金东-建才路北侧、大堰河街东侧、康济街西侧" class="iconAdress ml10 gray9">金东-建才路北侧、大堰河街东侧、康济街西侧</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>103㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">168</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    16311元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393716136.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M11/26/7186387bfca648258b93a1802742bc3e/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M11/26/7186387bfca648258b93a1802742bc3e.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">7</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="缤虹星城,精装3房,存一万抵两万,另送2万家电再 随时看" href="https://jh.esf.fang.com/chushou/3_393716136.htm" target="_blank">缤虹星城,精装3房,存一万抵两万,另送2万家电再 随时看</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2013
+            </p>
+            <p class="mt10">
+                <a title="缤虹星城" href="https://jh.esf.fang.com/house/kw%e7%cd%ba%e7%d0%c7%b3%c7/" target="_blank"><span>缤虹星城</span></a>
+                <span title="金西开发区-婺城-金西开发区-缤虹星城" class="iconAdress ml10 gray9">金西开发区-婺城-金西开发区-缤虹星城</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>88㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">99</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    11250元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393709961.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M11/0/e0b5eb00dc12402499db39b8bab439f3/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M11/0/e0b5eb00dc12402499db39b8bab439f3.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">9</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="蔚蓝海岸 江景别墅 6室2厅5卫 毛坯 急售 沿江排" href="https://jh.esf.fang.com/chushou/3_393709961.htm" target="_blank">蔚蓝海岸 江景别墅 6室2厅5卫 毛坯 急售 沿江排</a>
+            </p>
+            <p class="mt12">
+                6室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2018
+            </p>
+            <p class="mt10">
+                <a title="三联·蔚蓝海岸" href="https://jh.esf.fang.com/house-xm2017103546/" target="_blank"><span>三联·蔚蓝海岸</span></a>
+                <span title="金东-北临金瓯路,南临义乌江畔" class="iconAdress ml10 gray9">金东-北临金瓯路,南临义乌江畔</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>366㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">530</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    14481元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393709268.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M10/57/524cc5299c58451d8ba025291a85c15b/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M10/57/524cc5299c58451d8ba025291a85c15b.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">8</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="蔚蓝海岸 南北通透,视线好,带车库 5-10-12楼任你选" href="https://jh.esf.fang.com/chushou/3_393709268.htm" target="_blank">蔚蓝海岸 南北通透,视线好,带车库 5-10-12楼任你选</a>
+            </p>
+            <p class="mt12">
+                4室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2015
+            </p>
+            <p class="mt10">
+                <a title="三联·蔚蓝海岸" href="https://jh.esf.fang.com/house-xm2017103546/" target="_blank"><span>三联·蔚蓝海岸</span></a>
+                <span title="金东-北临金瓯路,南临义乌江畔" class="iconAdress ml10 gray9">金东-北临金瓯路,南临义乌江畔</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>140㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">198</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    14143元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393713315.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M11/13/dd108660d2ea4feeadd594d72d0573f7/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M11/13/dd108660d2ea4feeadd594d72d0573f7.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">11</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="紫金湾 复式4室2厅3卫 赠送面积大 随时看" href="https://jh.esf.fang.com/chushou/3_393713315.htm" target="_blank">紫金湾 复式4室2厅3卫 赠送面积大 随时看</a>
+            </p>
+            <p class="mt12">
+                4室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2013
+            </p>
+            <p class="mt10">
+                <a title="东辰·紫金湾" href="https://jh.esf.fang.com/house-xm2017094162/" target="_blank"><span>东辰·紫金湾</span></a>
+                <span title="金东-西邻政和街、东至大堰河街、北依艾青路、南接宋" class="iconAdress ml10 gray9">金东-西邻政和街、东至大堰河街、北依艾青路、南...</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>139㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">278</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    20000元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393707848.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M10/51/db25910a806f4f5f88927fa8ab4842f3/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M10/51/db25910a806f4f5f88927fa8ab4842f3.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">9</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="缤虹星城 108万 3室2厅1卫 精装修 阳台 随时看房" href="https://jh.esf.fang.com/chushou/3_393707848.htm" target="_blank">缤虹星城 108万 3室2厅1卫 精装修 阳台 随时看房</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2016
+            </p>
+            <p class="mt10">
+                <a title="缤虹星城" href="https://jh.esf.fang.com/house/kw%e7%cd%ba%e7%d0%c7%b3%c7/" target="_blank"><span>缤虹星城</span></a>
+                <span title="江南-金华市区-江南-缤虹星城" class="iconAdress ml10 gray9">江南-金华市区-江南-缤虹星城</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>88㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">102</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    11591元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393715872.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M11/25/6c3d75c726bc4c9eb8ecf510665823b4/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M11/25/6c3d75c726bc4c9eb8ecf510665823b4.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">5</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="保集江湾壹号,豪华典范,全智能社区 三江国际旁 全落地窗" href="https://jh.esf.fang.com/chushou/3_393715872.htm" target="_blank">保集江湾壹号,豪华典范,全智能社区 三江国际旁 全落地窗</a>
+            </p>
+            <p class="mt12">
+                4室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2013
+            </p>
+            <p class="mt10">
+                <a title="保集江湾壹号" href="https://jh.esf.fang.com/house-xm2016161468/" target="_blank"><span>保集江湾壹号</span></a>
+                <span title="金东-东市南街与丹溪路交汇处" class="iconAdress ml10 gray9">金东-东市南街与丹溪路交汇处</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>148㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">350</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    23649元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393834301.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/5/M10/19/eabb4b9ee9b4496794fa6c9e693cb9b2/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/5/M10/19/eabb4b9ee9b4496794fa6c9e693cb9b2.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">6</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="绿城御园,大合院北进门南花园,献给影响GDP的金华人" href="https://jh.esf.fang.com/chushou/3_393834301.htm" target="_blank">绿城御园,大合院北进门南花园,献给影响GDP的金华人</a>
+            </p>
+            <p class="mt12">
+                6室4厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2013
+            </p>
+            <p class="mt10">
+                <a title="绿城·金华御园" href="https://jh.esf.fang.com/house-xm2016975674/" target="_blank"><span>绿城·金华御园</span></a>
+                <span title="江北-北临二环北路、东临迎宾大道、南临玉泉路、西侧" class="iconAdress ml10 gray9">江北-北临二环北路、东临迎宾大道、南临玉泉路、...</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    <span class="colorPink note">满二</span>
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>758㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">1300</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    17150元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393716398.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M11/27/6336da75eab9437498418fb5151f7294/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M11/27/6336da75eab9437498418fb5151f7294.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">4</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="缤虹星城 现代简约风格 满两年 一手代理随时看 急售" href="https://jh.esf.fang.com/chushou/3_393716398.htm" target="_blank">缤虹星城 现代简约风格 满两年 一手代理随时看 急售</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南向
+                <span class="line">|</span>建筑年代：2013
+            </p>
+            <p class="mt10">
+                <a title="缤虹星城" href="https://jh.esf.fang.com/house/kw%e7%cd%ba%e7%d0%c7%b3%c7/" target="_blank"><span>缤虹星城</span></a>
+                <span title="江南-婺城-江南-宾虹新城" class="iconAdress ml10 gray9">江南-婺城-江南-宾虹新城</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>89㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">100</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    11236元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393832448.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/5/M10/11/bead9f6f5b9f46328dd429865008e1d5/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/5/M10/11/bead9f6f5b9f46328dd429865008e1d5.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">6</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="复式结构,边套,婚房装修40多万,实用150平" href="https://jh.esf.fang.com/chushou/3_393832448.htm" target="_blank">复式结构,边套,婚房装修40多万,实用150平</a>
+            </p>
+            <p class="mt12">
+                4室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2014
+            </p>
+            <p class="mt10">
+                <a title="都市郦景园" href="https://jh.esf.fang.com/house-xm2017140030/" target="_blank"><span>都市郦景园</span></a>
+                <span title="江南-李渔路与330国道交汇处以南" class="iconAdress ml10 gray9">江南-李渔路与330国道交汇处以南</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>110㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">178</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    16182元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393708205.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M10/53/4f4d82d8c7f14b518bd134ee7ae2f218/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M10/53/4f4d82d8c7f14b518bd134ee7ae2f218.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">9</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="广润瀚城金地艺境,精装修拎包入住 多套备选" href="https://jh.esf.fang.com/chushou/3_393708205.htm" target="_blank">广润瀚城金地艺境,精装修拎包入住 多套备选</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2017
+            </p>
+            <p class="mt10">
+                <a title="金地艺境" href="https://jh.esf.fang.com/house-xm2017171006/" target="_blank"><span>金地艺境</span></a>
+                <span title="金东-金华市金东区光南路与博士路交叉口(金一中斜对" class="iconAdress ml10 gray9">金东-金华市金东区光南路与博士路交叉口(金一中...</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>89㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">168</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    18876元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393701346.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M10/24/f7f10d3abe114f76a753eb21926c4b09/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M10/24/f7f10d3abe114f76a753eb21926c4b09.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">8</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="金夏银湖城 小区品质一流环境优美 带车库 精装 急售" href="https://jh.esf.fang.com/chushou/3_393701346.htm" target="_blank">金夏银湖城 小区品质一流环境优美 带车库 精装 急售</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2014
+            </p>
+            <p class="mt10">
+                <a title="金厦银湖城" href="https://jh.esf.fang.com/house-xm2017179158/" target="_blank"><span>金厦银湖城</span></a>
+                <span title="婺城新区-330国道与八达路交叉口" class="iconAdress ml10 gray9">婺城新区-330国道与八达路交叉口</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>89㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">129.8</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    14552元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393905360.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/5/M16/35/6211e50d80604b3ea5010949f48bf81b/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/5/M16/35/6211e50d80604b3ea5010949f48bf81b.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">10</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="万达附近轻轨附近保集江湾壹号 直接买 一手信息 无税" href="https://jh.esf.fang.com/chushou/3_393905360.htm" target="_blank">万达附近轻轨附近保集江湾壹号 直接买 一手信息 无税</a>
+            </p>
+            <p class="mt12">
+                4室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2018
+            </p>
+            <p class="mt10">
+                <a title="保集江湾壹号" href="https://jh.esf.fang.com/house-xm2016161468/" target="_blank"><span>保集江湾壹号</span></a>
+                <span title="金东-东市南街与丹溪路交汇处" class="iconAdress ml10 gray9">金东-东市南街与丹溪路交汇处</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>188㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">446</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    23723元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393832738.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/5/M10/12/711cf3341fe14a39827b3a30a656dd52/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/5/M10/12/711cf3341fe14a39827b3a30a656dd52.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">6</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="东华家园 3室2厅2卫2大阳台 带车库" href="https://jh.esf.fang.com/chushou/3_393832738.htm" target="_blank">东华家园 3室2厅2卫2大阳台 带车库</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2014
+            </p>
+            <p class="mt10">
+                <a title="东华家园" href="https://jh.esf.fang.com/house-xm2017092728/" target="_blank"><span>东华家园</span></a>
+                <span title="金东-李渔东路以南,康济街以东,开元路以北" class="iconAdress ml10 gray9">金东-李渔东路以南,康济街以东,开元路以北</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    <span class="colorPink note">满二</span>
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>126㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">178</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    14127元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393701670.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M10/26/beb8a41cc7a340cc8b34ff5c034734ee/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M10/26/beb8a41cc7a340cc8b34ff5c034734ee.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">8</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="李渔湾大厦东苑低总价中装,超低价格 随时看" href="https://jh.esf.fang.com/chushou/3_393701670.htm" target="_blank">李渔湾大厦东苑低总价中装,超低价格 随时看</a>
+            </p>
+            <p class="mt12">
+                1室1厅
+                <span class="line">|</span>北向
+                <span class="line">|</span>建筑年代：2014
+            </p>
+            <p class="mt10">
+                <a title="李渔湾大厦" href="https://jh.esf.fang.com/house/kw%c0%ee%d3%e6%cd%e5%b4%f3%cf%c3/" target="_blank"><span>李渔湾大厦</span></a>
+                <span title="江南-金华市区-江南-李渔湾大厦" class="iconAdress ml10 gray9">江南-金华市区-江南-李渔湾大厦</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>41㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">86</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    20864元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393713662.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M11/15/e916d0ede9a2424cbc0504e22491fd70/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M11/15/e916d0ede9a2424cbc0504e22491fd70.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">9</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="金华婺城区首付21万的房子 婺城婺城 随时看" href="https://jh.esf.fang.com/chushou/3_393713662.htm" target="_blank">金华婺城区首付21万的房子 婺城婺城 随时看</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2013
+            </p>
+            <p class="mt10">
+                <a title="万固西江月" href="https://jh.esf.fang.com/house-xm2016200222/" target="_blank"><span>万固西江月</span></a>
+                <span title="婺城新区-临江西路与西堰街交汇处" class="iconAdress ml10 gray9">婺城新区-临江西路与西堰街交汇处</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>89㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">86</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    9663元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <dl class="list rel">
+        <dt class="img rel floatl">
+            <a target="_blank" href="https://jh.esf.fang.com/chushou/3_393706483.htm">
+                <img alt="" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/loading160_120.gif" src2="//cdnsfb.soufunimg.com/viewimage/1/2019_12/4/M10/46/446241af16b84fd3b191ab8c4d4a487d/220x165c.jpg" onerror="imgiserror(this,&#39;http://cdnsfb.soufunimg.com/1/2019_12/4/M10/46/446241af16b84fd3b191ab8c4d4a487d.jpg&#39;)">
+            </a>
+            <p class="txtBg"></p>
+            <p class="txt">
+                <span class="iconImg">10</span>
+            </p>
+          
+                 
+        </dt>
+        <dd class="info rel floatr">
+            <p class="title">
+                <a title="金地都会之光精装交付首付36万找我团购优惠无任何费用" href="https://jh.esf.fang.com/chushou/3_393706483.htm" target="_blank">金地都会之光精装交付首付36万找我团购优惠无任何费用</a>
+            </p>
+            <p class="mt12">
+                3室2厅
+                <span class="line">|</span>南北向
+                <span class="line">|</span>建筑年代：2019
+            </p>
+            <p class="mt10">
+                <a title="金地都会之光" href="https://jh.esf.fang.com/house-xm2016200248/" target="_blank"><span>金地都会之光</span></a>
+                <span title="金东-建才路北侧、大堰河街东侧、康济街西侧" class="iconAdress ml10 gray9">金东-建才路北侧、大堰河街东侧、康济街西侧</span>
+            </p>
+            <p class="gray6 mt10">
+                <a rel="nofollow" href="https://jh.esf.fang.com/a/fang197879692" title="访问[郭兰]的个人网上店铺，查看更多房源" target="_blank">郭兰</a>
+            </p>
+            <div class="clearfix mt8">
+                <div class="pt4 floatl">
+                    
+                    
+                </div>
+            </div>
+            <div class="area alignR">
+                
+                <p>103㎡</p>
+                <p class="tag">建筑面积</p>
+                
+            </div>
+            <div class="moreInfo">
+                <p class="mt5 alignR">
+                    <span class="price">172</span>
+                    <span class="YaHei ml5">万</span>
+                </p>
+                <p class="danjia alignR mt5">
+                    16699元
+                  <span class="Arial">/</span>
+                    ㎡
+                </p>
+            </div>
+        </dd>
+        <div class="clear"></div>
+    </dl>
+    
+    <!-- 翻页 start -->
+    <div class="fanye gray6" name="div_PageList" id="esfdeallistfanye">
+        <a id="esfPage_hlk_first" style="display: none;">首页</a>
+        <a id="esfPage_hlk_pre" style="display: none;">上一页</a>
+        
+        <a class="pageNow">1</a>
+        
+        <a class="">2</a>
+        
+        <a id="esfPage_hlk_next">下一页</a> <a id="esfPage_hlk_last">末页</a>
+        
+        <span class="txt">共2页</span>
+    </div>
+    <!-- 翻页 end -->
+    <script>
+        var allcount =60;
+        var pageindex=1;
+        var pageCount=2;
+        if (allcount > 0) {
+            if (pageindex!='1') {
+                jQuery("#esfPage_hlk_first").css("display","");
+                jQuery("#esfPage_hlk_pre").css("display","");
+                if (pageindex==pageCount) {
+                    jQuery("#esfPage_hlk_next").css("display","none");
+                    jQuery("#esfPage_hlk_last").css("display","none");
+                }
+            }
+            jQuery("#esfdeallistfanye").find('a').click(function () {
+                switch (jQuery(this).text()) {
+                    case "首页":
+                        pageindex = 1;
+                        break;
+                    case "上一页":
+                        pageindex = (pageindex-1)<0?0:(pageindex-1);
+                        break;
+                    case "下一页":
+                        pageindex = (pageindex + 1) >= pageCount ? pageCount : pageindex + 1;
+                        break;
+                    case "末页":
+                        pageindex = pageCount;
+                        break;
+                    default:
+                        pageindex = parseInt($(this).text());
+                        break
+                }
+                var url="/Agent/Ajax/Gethousedata.aspx?type=esf&agentid=166099556&purpose=%d7%a1%d5%ac&pageindex=" + pageindex;
+                    if(jQuery("#esfprojname").val()!="")
+                    {
+                        url+="&projname="+PageHelper.UrlEncoding.UrlEncode(jQuery("#esfprojname").val());
+                    }
+                    if(jQuery("#esfselectprice").val()!="")
+                    {
+                        url+="&price="+jQuery("#esfselectprice").val();
+                    }
+                    if(jQuery("#esfselectarea").val()!="")
+                    {
+                        url+="&area="+jQuery("#esfselectarea").val();
+                    }
+                    if(jQuery("#esfselectroom").val()!="")
+                    {
+                        url+="&room="+jQuery("#esfselectroom").val();
+                    }
+                    if(jQuery("#esfselectorder").val()!="")
+                    {
+                        url+="&orderby="+jQuery("#esfselectorder").val();
+                    }
+                    jQuery("#esfhouselist").load(url,function(){
+                        ImageUtility.ImageInit();});
+                });
+            }
+            else {
+                jQuery("#hsRec-pos").css("display", "none");
+            }
+    </script>
+</div>
+<!-- 二手房房源信息 end -->
+<script type="text/javascript">
+        if (_ub != undefined) {
+            _ub.city = '金华'; //*所在城市（中文）*@
+            _ub.biz = 'e'; //*如果是二手房的猜你喜欢就是e，如果是新房的猜你喜欢就是n；*@
+            _ub.location = 0; //*方位 ，网通为0，电信为1，如果无法获取方位，记录0*@
+            _ub.collect(1,{"vwg.page":"esf_jjr^xq_pc","vwg.business":"e","vwe.dwellingtype":"%e4%bd%8f%e5%ae%85"}); //*// 例如：'ets':'209870948^2'  ，新房的就是：'nts':'209870948^2'*@
+        }
+    </script>
+
+<input type="hidden" id="esfprojname" value="">
+<input type="hidden" id="esfselectprice" value="">
+<input type="hidden" id="esfselectarea" value="">
+<input type="hidden" id="esfselectroom" value="">
+<input type="hidden" id="esfselectorder" value="">
+<input type="hidden" id="importantesfprojname" value="&lt;span style=&#39;padding-right:10px;&#39;&gt;金地艺境(9)&lt;/span&gt;&lt;span style=&#39;padding-right:10px;&#39;&gt;金地都会之光(8)&lt;/span&gt;&lt;span style=&#39;padding-right:10px;&#39;&gt;保集江湾壹号(8)&lt;/span&gt;">
+<input type="hidden" id="esfhouse" value="1">
+<script type="text/javascript">
+    // 筛选下拉效果
+    $('.select_box').hover(function(){
+        $(this).children('.tag_options').show();
+    },function(){
+        $(this).children('.tag_options').hide();
+    });
+    jQuery("#esftag_optionspurpose li a").click(function () {
+        jQuery("#esftar_purpose").html(jQuery(this).html());
+        jQuery("#esftag_optionspurpose").hide();
+        jQuery("#esfhouseitem").load("/Agent/Ajax/GetAgentShopHouse.aspx?type=esf&agentid=" + agentid + "&purpose=" + PageHelper.UrlEncoding.UrlEncode(jQuery(this).html()),function(){
+            ImageUtility.ImageInit();});
+    });
+    jQuery("#esftag_optionsprojname li a[value]").click(function(){
+        if(jQuery(this).attr('value')!="全部"){
+            jQuery("#esfprojname").val(jQuery(this).attr('value'));
+        }
+        else
+        {
+            jQuery("#esfprojname").val('');
+        }
+        jQuery("#esftag_projname").html(jQuery(this).html());
+        jQuery("#esftag_optionsprojname").hide();
+    });
+    jQuery("#esftag_optionsprice li a[value]").click(function(){
+        if(jQuery(this).attr('value')!="全部"){
+            jQuery("#esfselectprice").val(jQuery(this).attr('value'));
+        }
+        else
+        {
+            jQuery("#esfselectprice").val('');
+        }
+        jQuery("#esftag_price").html(jQuery(this).html());
+        jQuery("#esftag_optionsprice").hide();
+    });
+    jQuery("#esftag_optionsroom li a[value]").click(function(){
+        if(jQuery(this).attr('value')!="全部"){
+            jQuery("#esfselectroom").val(jQuery(this).attr('value'));
+        }
+        else
+        {
+            jQuery("#esfselectroom").val('');
+        }
+        jQuery("#esftag_room").html(jQuery(this).html());
+        jQuery("#esftag_optionsroom").hide();
+    });
+    jQuery("#esftag_optionsarea li a[value]").click(function(){
+        if(jQuery(this).attr('value')!="全部"){
+            jQuery("#esfselectarea").val(jQuery(this).attr('value'));
+        }
+        else
+        {
+            jQuery("#esfselectarea").val('');
+        }
+        jQuery("#esftag_area").html(jQuery(this).html());
+        jQuery("#esftag_optionsarea").hide();
+    });
+    jQuery("#esforderbymoren").click(function(){
+        var url="/Agent/Ajax/Gethousedata.aspx?type=esf&agentid=166099556&purpose=%d7%a1%d5%ac&pageindex=" + pageindex;
+        if(jQuery("#esfprojname").val()!=""&&jQuery("#esftag_projname").val()!="小区")
+        {
+            url+="&projname="+PageHelper.UrlEncoding.UrlEncode(jQuery("#esfprojname").val());
+        }
+        if(jQuery("#esfselectprice").val()!=""&&jQuery("#esftag_price").val()!="价格")
+        {
+            url+="&price="+jQuery("#esfselectprice").val();
+        }
+        if(jQuery("#esfselectarea").val()!=""&&jQuery("#esftag_area").val()!="面积")
+        {
+            url+="&area="+jQuery("#esfselectarea").val();
+        }
+        if(jQuery("#esfselectroom").val()!=""&&jQuery("#esftag_room").val()!="户型")
+        {
+            url+="&room="+jQuery("#esfselectroom").val();
+        }
+        jQuery("#esfselectorder").val("");
+        jQuery("#esforderbyarea").removeClass('current');
+        jQuery("#esforderbyprice").removeClass('current');
+        jQuery("#esfhouselist").load(url,function(){
+            ImageUtility.ImageInit();});
+    });
+    jQuery("#esforderbyarea").click(function(){
+        var url="/Agent/Ajax/Gethousedata.aspx?type=esf&agentid=166099556&purpose=%d7%a1%d5%ac&pageindex=" + pageindex;
+        if(jQuery("#esfprojname").val()!=""&&jQuery("#esftag_projname").val()!="小区")
+        {
+            url+="&projname="+PageHelper.UrlEncoding.UrlEncode(jQuery("#esfprojname").val());
+        }
+        if(jQuery("#esfselectprice").val()!=""&&jQuery("#esftag_price").val()!="价格")
+        {
+            url+="&price="+jQuery("#esfselectprice").val();
+        }
+        if(jQuery("#esfselectarea").val()!=""&&jQuery("#esftag_area").val()!="面积")
+        {
+            url+="&area="+jQuery("#esfselectarea").val();
+        }
+        if(jQuery("#esfselectroom").val()!=""&&jQuery("#esftag_room").val()!="户型")
+        {
+            url+="&room="+jQuery("#esfselectroom").val();
+        }
+        if (jQuery(this).hasClass('current'))
+        {
+            jQuery(this).removeClass('current');
+            url+="&orderby=7";
+            jQuery("#esfselectorder").val("7");
+        }
+        else
+        {
+            jQuery(this).addClass('current');
+            jQuery("#esforderbyprice").removeClass('current');
+            url+="&orderby=8";
+            jQuery("#esfselectorder").val("8");
+        }
+        jQuery("#esfhouselist").load(url,function(){
+            ImageUtility.ImageInit();});
+    });
+    jQuery("#esforderbyprice").click(function(){
+        var url="/Agent/Ajax/Gethousedata.aspx?type=esf&agentid=166099556&purpose=%d7%a1%d5%ac&pageindex=" + pageindex;
+        if(jQuery("#esfprojname").val()!=""&&jQuery("#esftag_projname").val()!="小区")
+        {
+            url+="&projname="+PageHelper.UrlEncoding.UrlEncode(jQuery("#esfprojname").val());
+        }
+        if(jQuery("#esfselectprice").val()!=""&&jQuery("#esftag_price").val()!="价格")
+        {
+            url+="&price="+jQuery("#esfselectprice").val();
+        }
+        if(jQuery("#esfselectarea").val()!=""&&jQuery("#esftag_area").val()!="面积")
+        {
+            url+="&area="+jQuery("#esfselectarea").val();
+        }
+        if(jQuery("#esfselectroom").val()!=""&&jQuery("#esftag_room").val()!="户型")
+        {
+            url+="&room="+jQuery("#esfselectroom").val();
+        }
+        if (jQuery(this).hasClass('current'))
+        {
+            jQuery(this).removeClass('current');
+            url+="&orderby=3";
+            jQuery("#esfselectorder").val("3");
+        }
+        else
+        {
+            jQuery(this).addClass('current');
+            jQuery("#esforderbyarea").removeClass('current');
+            url+="&orderby=4";
+            jQuery("#esfselectorder").val("4");
+        }
+        jQuery("#esfhouselist").load(url,function(){
+            ImageUtility.ImageInit();});
+    });
+    jQuery("#esfsearchBtn").click(function(){
+        var url="/Agent/Ajax/Gethousedata.aspx?type=esf&search=1&agentid=166099556&purpose=%d7%a1%d5%ac&pageindex=1";
+        if(jQuery("#esfprojname").val()!=""&&jQuery("#esftag_projname").val()!="小区")
+        {
+            url+="&projname="+PageHelper.UrlEncoding.UrlEncode(jQuery("#esfprojname").val());
+        }
+        if(jQuery("#esfselectprice").val()!=""&&jQuery("#esftag_price").val()!="价格")
+        {
+            url+="&price="+jQuery("#esfselectprice").val();
+        }
+        if(jQuery("#esfselectarea").val()!=""&&jQuery("#esftag_area").val()!="面积")
+        {
+            url+="&area="+jQuery("#esfselectarea").val();
+        }
+        if(jQuery("#esfselectroom").val()!=""&&jQuery("#esftag_room").val()!="户型")
+        {
+            url+="&room="+jQuery("#esfselectroom").val();
+        }
+        if(jQuery("#esfselectorder").val()!=""&&(jQuery("#esforderbyarea").hasClass('current')||jQuery("#esforderbyprice").hasClass('current')))
+        {
+            url+="&orderby="+jQuery("#esfselectorder").val();
+        }
+        jQuery("#esfhouselist").load(url,function(){
+            ImageUtility.ImageInit();});
+    });
+</script>
+
+
+                </div>
+                <!-- 二手房列表页 end -->
+                <!-- 租房列表页 start -->
+                <div id="renthouseitem" class="listContent-item" style="display: none;">
+                    
+<script type="text/javascript">
+    document.getElementById("renthousetab").style.display="none";
+    document.getElementById("renthouseitem").style.display="none";
+    jQuery("#renthouseitem").removeClass("current");
+    hasrenthouse=0;
+</script>
+
+                </div>
+                <!-- 租房列表页 end -->
+                <!-- 经纪人信息列表页 start -->
+                
+<div id="agentinfodiv" class="listContent-item">
+    
+    <!-- 认证记录 start -->
+    <div class="record">
+        <h3>认证记录</h3>
+        <ul class="renzheng clearfix">
+            
+            <li>
+                <p>
+                    <a href="https://jh.esf.fang.com/agent/help/renzheng.aspx" target="_blank">
+                        <img src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/icon_id.gif">
+                    </a>
+                </p>
+                <span>身份认证</span>
+            </li>
+            
+            <li>
+                <p>
+                    <a href="https://jh.esf.fang.com/agent/help/renzheng.aspx" target="_blank">
+                        <img src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/star.jpg" style="height:12px;width:12px;" align="absmiddle"><img src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/star.jpg" style="height:12px;width:12px;" align="absmiddle"><img src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/star.jpg" style="height:12px;width:12px;" align="absmiddle">
+                    </a>
+                </p>
+                <span>综合能力认证</span>
+            </li>
+            
+            
+        </ul>
+    </div>
+    <!-- 认证记录 end -->
+    
+    <!-- 客户评论 start -->
+
+    <div class="comment">
+        <h3><a href="javascript:;" onclick="pingjiaagent();return false;">点评一下&gt;</a>客户评价</h3>
+        <div class="high_praise clearfix">
+            <div class="attitude">
+                <p>
+                    <span class="Arial">100</span><i class="Arial">%</i>
+                </p>
+                <p>好评率</p>
+            </div>
+            <div class="skill">
+                <ul>
+                    <li>房屋信息真实度<span>5.0</span></li>
+                    <li>服务态度满意度<span>5.0</span></li>
+                    <li>业务水平专业度<span>5.0</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="comment_content clearfix">
+            <div class="comment_title">
+                <ul class="evaluation">
+                    <li class="checked" onclick="getEvaluation(&#39;&#39;)">全部评价（0）</li>
+                    <li onclick="getEvaluation(&#39;3&#39;)">好评（0）</li>
+                    <li onclick="getEvaluation(&#39;2&#39;)">中评（0）</li>
+                    <li onclick="getEvaluation(&#39;1&#39;)">差评（0）</li>
+                </ul>
+            </div>
+            
+            <!-- 没有客户评价时的默认状态 -->
+            <div class="clientjudgecontent">
+                <dl>
+                    <dt>
+                        <img src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/sorry.jpg" alt=""></dt>
+                    <dd><a onclick="pingjiaagent();return false;" href="javascript:void(0);">还没有人给他评价，我来点评一下</a></dd>
+                </dl>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- 客户评论 end -->
+    <!-- 职业信息 start -->
+    
+    <!-- 职业信息 end -->
+    <!-- 个人信息 start -->
+    
+    <!-- 个人信息 end -->
+</div>
+<script type="text/javascript">
+    function getEvaluation(elevel) {
+        var url = "/Agent/Ajax/AgentCustomerList.aspx?agentid=" + agentid + "&pageindex=1=&pagesize=5&elevel=" + elevel + "&agentname=%b9%f9%c0%bc";
+        jQuery("#customerpingjialist").load(url);
+    }
+</script>
+
+                <!-- 经纪人信息列表页 end -->
+                <div class="listContent-item" id="agenterroritem" style="display: none;">
+                    
+
+<!--违规记录汇总 start-->
+
+<script type="text/javascript">
+    jQuery("#agenterrortab").css("display", "none");
+    jQuery("#agenterroritem").css("display", "none");
+</script>
+
+                </div>
+                
+<script>
+    jQuery("#agentdoufangtab").hide();
+</script>
+
+            </div>
+            <!-- 列表内容 end -->
+        </div>
+        <!-- 左侧页面 end-->
+        <!-- 右侧页面 start-->
+        <div class="conright">
+            <!-- 我的资历 start -->
+            
+<div class="seniority">
+    <h3>我的资历</h3>
+    <!-- 资历未认证时的默认图片 -->
+    
+    <img class="zili_nopic" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/zili_nopic.jpg" alt="">
+      <ul class="company">
+        <li>公司名称：<span>金华房媒</span></li>
+          
+      </ul>
+    
+    <ul class="renzheng clearfix">
+        
+        <li>
+            <p>
+                <a href="https://jh.esf.fang.com/agent/help/renzheng.aspx" target="_blank">
+                    <img src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/icon_id.gif">
+                </a>
+            </p>
+            <span>身份认证</span>
+        </li>
+      
+                    
+        
+    </ul>
+    
+    <ul class="about">
+        
+    </ul>
+</div>
+
+            <!-- 我的资历 end -->
+            <!-- 客户评价 start -->
+            <div class="rateWrap clearfix">
+                <h3>客户评价</h3>
+                <ul>
+                    <li>房屋信息真实度<span class="redword">5.0</span></li>
+                    <li>服务态度满意度<span class="redword">5.0</span></li>
+                    <li>业务水平专业度<span class="redword">5.0</span></li>
+                </ul>
+                <div class="rate">
+                    <p>
+                        <span class="mark redword">100</span>
+                        <span class="redword">%</span>
+                    </p>
+                    <p class="alignR">好评率</p>
+                </div>
+                <div class="comment">
+                    <a href="javascript:;" onclick="pingjiaagent();return false;">我也要点评TA</a>
+                </div>
+            </div>
+            <!-- 客户评价 end -->
+            <!-- 问答 start -->
+            
+            <!-- 问答 end -->
+        </div>
+        <!-- 右侧页面 end-->
+    </div>
+    <!--公用尾文件开始-->
+    <div class="footer">
+
+        <style type="text/css">
+    .DivCss20091020WZiColor333 a:hover {
+        color: #c00;
+        text-decoration: underline;
+    }
+
+    .DivCss20091020WZiColor333 a:active {
+        color: #c00;
+    }
+
+    .DivCss20091020WZiColorf00 a:link {
+        color: #c00;
+        text-decoration: none;
+    }
+
+    .DivCss20091020WZiColorf00 a:visited {
+        color: #c00;
+        text-decoration: none;
+    }
+
+    .DivCss20091020WZiColorf00 a:hover {
+        color: #c00;
+        text-decoration: underline;
+    }
+
+    .DivCss20091020WZiColorf00 a:active {
+        color: #c00;
+    }
+</style>
+<script type="text/javascript">
+    var $get = function (id) {
+        return document.getElementById(id);
+    }
+    function moreBoxto(numcss1020) {
+        for (j = 0; j < 10; j++) {
+            if ($get('moreBox' + j)) {
+                $get('moreBox' + j).style.display = 'none';
+
+            }
+        }
+        $get('moreBox' + numcss1020).style.display = 'block';
+    }
+    function hidden_moreBoxto(numcss1020) {
+        timeout = setTimeout(function () { $get("moreBox" + numcss1020).style.display = "none"; }, 100);
+    }
+    function show_moreBoxto(numcss1020) {
+        window.clearTimeout(timeout);
+        $get("moreBox" + numcss1020).style.display = "";
+    }
+    function AddFavorite() {
+        var title = document.title;
+        var url = document.location.href;
+        if (window.sidebar) window.sidebar.addPanel(title, url, "");
+        else if (window.opera && window.print) {
+            var mbm = document.createElement('a');
+            mbm.setAttribute('rel', 'sidebar');
+            mbm.setAttribute('href', url);
+            mbm.setAttribute('title', title);
+            mbm.click();
+        }
+        else if (document.all) window.external.addFavorite(url, title);
+    }
+</script>
+<!--20091020搜房网统一版尾-->
+<div class="mt10 clear"></div>
+<div id="esfjh_71" style="width:960px;height:105px;background:#fff;font-size:12px;font-family:&#39;宋体&#39;;clear:both;margin:0 auto;border-top:1px solid #ccc;" class="DivCss20091020WZiColor333">
+    <div style="line-height:20px;text-align:center;margin-top:5px;">
+        <a href="https://www.fang.com/aboutus/index.asp" target="_blank">关于我们</a> <span style="font-family: Verdana;">‖</span>
+        <a href="https://www.fang.com/hezuo_file/house/index.html" target="_blank">网站合作</a> <span style="font-family: Verdana;">‖</span>
+        <a href="https://esf.fang.com/aboutus/contactus.html" target="_blank">联系我们</a> <span style="font-family: Verdana;">‖</span>
+        <a href="https://agent.fang.com/Develop/EsfProductIntroduce/index.html" target="_blank">我要推广</a> <span style="font-family: Verdana;">‖</span>
+        <a href="https://www.fang.com/zhaopin" target="_blank">招聘信息</a> <span style="font-family: Verdana;">‖</span>
+        <a href="javascript:;" onmouseout="hidden_moreBoxto(1020)" onmouseover="moreBoxto(1020)">各地二手房</a> <span style="font-family: Verdana;">‖</span>
+        <a href="https://www.fang.com/sitemap.html" target="_blank">网站地图</a> <span style="font-family: Verdana;">‖</span>
+        <a href="https://support.fang.com/FAQ/Index.html" target="_blank" onclick="this.href=&#39;//support.fang.com/FAQ/Index.html?laiyuanurl=&#39;+encodeURIComponent(window.location.href)">意见反馈</a> <span style="font-family: Verdana;">‖</span>
+        <a href="https://m.fang.com/" target="_blank">手机房天下</a>‖<a href="https://open.fang.com/" target="_blank">开放平台</a>‖
+        <a href="https://jh.esf.fang.com/links.htm" target="_blank">更多链接</a>‖
+        <a href="https://news.fang.com/zt/201805/xinbaichengzhanlue123.html" target="_blank">加盟房天下</a>
+    </div>
+    <!--弹出城市 begin-->
+    <div style="position:relative;width:1px;height:1px;z-index:100">
+        <div onmouseout="hidden_moreBoxto(1020)" onmouseover="show_moreBoxto(1020);" id="moreBox1020" style="position: absolute; top: -15px; right: 10px ! important; left: 450px; width: 480px; height: 280px; background: none repeat scroll 0% 0% rgb(240, 240, 240); border: 1px solid rgb(153, 153, 153); padding: 10px 10px 0px; line-height: 21px; font-size: 12px; display: none;">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0" class="DivCss20091020WZiColor333">
+                <tbody>
+                    <tr>
+                        <td width="3%"><b style="color:#c00;">B</b></td>
+                        <td width="18%"><a target="_blank" href="https://esf1.fang.com/">北京二手房</a></td>
+                        <td width="3%">&nbsp;</td>
+                        <td width="18%"><a target="_blank" href="https://esf.guilin.fang.com/">桂林二手房</a></td>
+                        <td width="3%">&nbsp;</td>
+                        <td width="17%"><a target="_blank" href="https://esf.ly.fang.com/">洛阳二手房</a></td>
+                        <td width="3%">&nbsp;</td>
+                        <td width="19%"><a target="_blank" href="https://esf.sjz.fang.com/">石家庄二手房</a><a target="_blank" href="https://esf.nn.fang.com/"></a></td>
+                        <td width="3%">&nbsp;</td>
+                        <td width="13%"><a target="_blank" href="https://esf.xz.fang.com/">徐州二手房</a></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.bd.fang.com/">保定二手房</a></td>
+                        <td><b style="color:#c00;">H</b></td>
+                        <td><a target="_blank" href="https://esf.hz.fang.com/">杭州二手房</a></td>
+                        <td><b style="color:#c00;">N</b></td>
+                        <td><a target="_blank" href="https://esf.nanjing.fang.com/">南京二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.sy.fang.com/">沈阳二手房</a><a target="_blank" href="https://esf.sanya.fang.com/"></a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://jh.esf.fang.com//a/fang197879692?_rfss=31&amp;rfss=1-a5c5262e0ab72e3b3c-31#">厦门二手房</a></td>
+                    </tr>
+                    <tr>
+                        <td><b style="color:#c00;">C</b></td>
+                        <td><a target="_blank" href="https://esf.cd.fang.com/">成都二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.hn.fang.com/">海南二手房</a><a target="_blank" href="https://esf.huizhou.fang.com/"></a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.nc.fang.com/">南昌二手房</a><a target="_blank" href="https://esf.jn.fang.com/"></a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.sanya.fang.com/">三亚二手房</a><a target="_blank" href="https://esf.qd.fang.com/"></a></td>
+                        <td><b style="color:#c00;">Y</b></td>
+                        <td><a target="_blank" href="https://esf.yc.fang.com/">宜昌二手房</a></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.cq.fang.com/">重庆二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.huizhou.fang.com/">惠州二手房</a><a target="_blank" href="https://esf.hrb.fang.com/"></a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.nb.fang.com/">宁波二手房</a><a target="_blank" href="https://esf.km.fang.com/"></a></td>
+                        <td><b style="color:#c00;">T</b></td>
+                        <td><a target="_blank" href="https://esf.tj.fang.com/">天津二手房</a><a target="_blank" href="https://esf.sh.fang.com/"></a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.yt.fang.com/">烟台二手房</a></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.cs.fang.com/">长沙二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.hrb.fang.com/">哈尔滨二手房</a><a target="_blank" href="https://esf.nm.fang.com/"></a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.nn.fang.com/">南宁二手房</a><a target="_blank" href="https://esf.nanjing.fang.com/"></a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.ts.fang.com/">唐山二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.yz.fang.com/">扬州二手房</a></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.changchun.fang.com/">长春二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.nm.fang.com/">呼和浩特二手房</a><a target="_blank" href="https://esf.hf.fang.com/"></a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.nt.fang.com/">南通二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.taiyuan.fang.com/">太原二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.yinchuan.fang.com/">银川二手房</a></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.cz.fang.com/">常州二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.hf.fang.com/">合肥二手房</a><a target="_blank" href="https://esf.hz.fang.com/"></a></td>
+                        <td><b style="color:#c00;">Q</b></td>
+                        <td><a target="_blank" href="https://esf.qd.fang.com/">青岛二手房</a><a target="_blank" href="https://esf.nb.fang.com/"></a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.taizhou.fang.com/">泰州二手房 </a></td>
+                        <td><b style="color:#c00;">Z</b></td>
+                        <td><a target="_blank" href="https://esf.zz.fang.com/">郑州二手房</a></td>
+                    </tr>
+                    <tr>
+                        <td width="3%"><b style="color:#c00;">D</b></td>
+                        <td width="18%"><a target="_blank" href="https://esf.dg.fang.com/">东莞二手房</a><a target="_blank" href="https://esf1.fang.com/"></a></td>
+                        <td width="3%"><b style="color:#c00;">J</b></td>
+                        <td width="18%"><a target="_blank" href="https://esf.jn.fang.com/">济南二手房</a><a target="_blank" href="https://esf.dg.fang.com/"></a></td>
+                        <td width="3%">&nbsp;</td>
+                        <td width="17%"><a target="_blank" href="https://esf.qhd.fang.com/">秦皇岛二手房</a></td>
+                        <td width="3%"><b style="color:#c00;">W</b></td>
+                        <td width="19%"><a target="_blank" href="https://esf.wuhan.fang.com/">武汉二手房</a><a target="_blank" href="https://esf.nn.fang.com/"></a></td>
+                        <td width="3%">&nbsp;</td>
+                        <td width="13%"><a target="_blank" href="https://esf.zh.fang.com/">珠海二手房</a></td>
+                    </tr>
+                    <tr>
+                        <td height="14">&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.dl.fang.com/">大连二手房</a><a target="_blank" href="https://esf.cd.fang.com/"></a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.jm.fang.com/">江门二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.qz.fang.com/">泉州二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.wuxi.fang.com/">无锡二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.zs.fang.com/">中山二手房</a></td>
+                    </tr>
+                    <tr>
+                        <td><b style="color:#c00;">F</b></td>
+                        <td><a target="_blank" href="https://esf.fz.fang.com/">福州二手房</a><a target="_blank" href="https://esf.cq.fang.com/"></a></td>
+                        <td><b style="color:#c00;">K</b></td>
+                        <td><a target="_blank" href="https://esf.km.fang.com/">昆明二手房</a><a target="_blank" href="https://esf.fz.fang.com/"></a></td>
+                        <td><b style="color:#c00;">S</b></td>
+                        <td><a target="_blank" href="https://esf.sh.fang.com/">上海二手房</a><a target="_blank" href="https://esf.km.fang.com/"></a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.weihai.fang.com/">威海二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.wuhan.fang.com/"></a></td>
+                    </tr>
+                    <tr>
+                        <td><b style="color:#c00;">G</b></td>
+                        <td><a target="_blank" href="https://esf.gz.fang.com/">广州二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.ks.fang.com/">昆山二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.sz.fang.com/">深圳二手房</a><a target="_blank" href="https://esf.nanjing.fang.com/"></a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.wf.fang.com/">潍坊二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.wuxi.fang.com/"></a></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.gy.fang.com/">贵阳二手房</a><a target="_blank" href="https://esf.changchun.fang.com/"></a></td>
+                        <td><b style="color:#c00;">L</b></td>
+                        <td><a target="_blank" href="https://esf.lz.fang.com/">兰州二手房</a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.suzhou.fang.com/">苏州二手房</a><a target="_blank" href="https://esf.nc.fang.com/"></a></td>
+                        <td><b style="color:#c00;">X</b></td>
+                        <td><a target="_blank" href="https://esf.xian.fang.com/">西安二手房</a><a target="_blank" href="https://esf.suzhou.fang.com/"></a></td>
+                        <td>&nbsp;</td>
+                        <td><a target="_blank" href="https://esf.xian.fang.com/"></a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align:right;" class="DivCss20091020WZiColorf00"><a href="https://esf.fang.com/cities.aspx" target="_blank">进入房天下二手房&gt;&gt;</a></div>
+        </div>
+    </div>
+    <!--弹出城市 end-->
+    <div style="font-family:Verdana;line-height:20px;text-align:center;">
+        房天下二手房：
+        <a href="https://jh.esf.fang.com/" target="_blank">二手房</a>
+        <a href="https://jh.zu.fang.com/" target="_blank">租房</a>
+        <a href="https://fangjia.fang.com/" target="_blank">评估</a> 
+        <a href="https://jh.esf.fang.com/housing/" target="_blank">小区</a>
+        <a href="https://esf.fang.com/housing/letter_A.htm" target="_blank">A</a>
+        <a href="https://esf.fang.com/housing/letter_B.htm" target="_blank">B</a>
+        <a href="https://esf.fang.com/housing/letter_C.htm" target="_blank">C</a>
+        <a href="https://esf.fang.com/housing/letter_D.htm" target="_blank">D</a>
+        <a href="https://esf.fang.com/housing/letter_E.htm" target="_blank">E</a>
+        <a href="https://esf.fang.com/housing/letter_F.htm" target="_blank">F</a>
+        <a href="https://esf.fang.com/housing/letter_G.htm" target="_blank">G</a>
+        <a href="https://esf.fang.com/housing/letter_H.htm" target="_blank">H</a>
+        <a href="https://esf.fang.com/housing/letter_I.htm" target="_blank">I</a>
+        <a href="https://esf.fang.com/housing/letter_J.htm" target="_blank">J</a>
+        <a href="https://esf.fang.com/housing/letter_K.htm" target="_blank">K</a>
+        <a href="https://esf.fang.com/housing/letter_L.htm" target="_blank">L</a>
+        <a href="https://esf.fang.com/housing/letter_M.htm" target="_blank">M</a>
+        <a href="https://esf.fang.com/housing/letter_N.htm" target="_blank">N</a>
+        <a href="https://esf.fang.com/housing/letter_O.htm" target="_blank">O</a>
+        <a href="https://esf.fang.com/housing/letter_P.htm" target="_blank">P</a>
+        <a href="https://esf.fang.com/housing/letter_Q.htm" target="_blank">Q</a>
+        <a href="https://esf.fang.com/housing/letter_R.htm" target="_blank">R</a>
+        <a href="https://esf.fang.com/housing/letter_S.htm" target="_blank">S</a>
+        <a href="https://esf.fang.com/housing/letter_T.htm" target="_blank">T</a>
+        <a href="https://esf.fang.com/housing/letter_U.htm" target="_blank">U</a>
+        <a href="https://esf.fang.com/housing/letter_V.htm" target="_blank">V</a>
+        <a href="https://esf.fang.com/housing/letter_W.htm" target="_blank">W</a>
+        <a href="https://esf.fang.com/housing/letter_X.htm" target="_blank">X</a>
+        <a href="https://esf.fang.com/housing/letter_Y.htm" target="_blank">Y</a>
+        <a href="https://esf.fang.com/housing/letter_Z.htm" target="_blank">Z</a>
+        &nbsp;
+        <a href="https://jh.esf.fang.com/newsecond/newslist/1_16.htm" target="_blank">热门商圈</a>
+        
+        <a href="https://jh.esf.fang.com/xiaoqu/" target="_blank">小区索引</a>
+    </div>
+    <div style="font-family:Verdana;line-height:20px;text-align:center;">
+        Copyright &#169;
+        <script language="javascript">
+            var dt = new Date();
+            y = dt.getFullYear(); //获取年(四位)
+            document.write(y)</script>2019北京搜房科技发展有限公司
+    </div>
+    <div style="line-height:23px;text-align:center;position:relative;font-family:Verdana;">Beijing SouFun Science&amp;Technology Development Co.,Ltd 版权所有</div>
+    <div style="line-height:20px;text-align:center;">违法和不良信息举报电话：<span style="font-family:Verdana;">010-56318764</span> 举报邮箱：<a href="mailto:jubao@fang.com" style="font-family:Verdana;">jubao@fang.com</a></div>
+</div>
+<script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/support.FQA.js.下载"></script>
+    </div>
+    <!--公用尾文件结束-->
+    <div class="img_pup" style="display: none;"></div>
+
+<script type="text/javascript">
+    var agentid = '166099556';
+    var jjrid = '166099556';
+    var jjrname = '郭兰';
+    var jjrmobile = '13567908808';
+    if (jjrmobile == "") {
+        jjrmobile = '';
+    }
+    var evaluationEntrance = 3;
+    var jjrmanagername = 'fang197879692';
+    var jjrcompanyname = '金华房媒';
+    var photourl = 'http://imgwcs3.soufunimg.com/agents/2019_11/26/wap/newcertificate/a400c643-8e23-4c2e-99f7-22bc4f48f322.jpg';
+    var isweixinqr = '0';
+    var shortwapdb = 'jh';
+</script>
+<script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/PageDomHelper.js.下载"></script>
+<!-- 登录需要引用这个四个静态页-->
+<script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/PageHelper.js.下载"></script>
+<script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/CookieHelper.js.下载"></script>
+<script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/XmlHttpRequest.js.下载"></script>
+<script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/LoginHelper.js.下载"></script>
+ 
+<script>
+    jQuery(function () {
+        LoginHelperNew.initLoginWindowdefNew(PageDomHelper.getElId("loginBarNew"));
+
+    });
+</script>  
+<script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/ImageUtility.js.下载"></script>
+<script type="text/javascript">ImageUtility.ImageInit();</script>
+<script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/agentshop.js.下载"></script>
+<!--<script type="text/javascript" src="/gg/JsFiles/Agent/Agent/agentshop.js?v=3.2019091801"></script>-->
+<script type="text/javascript" src="./郭兰的网上店铺,致电13567908808-搜房帮-房天下_files/historyDeal-slider.js.下载"></script>
+
+
+<script>
+    //jQuery("#agentinfodiv").hide();
+    jQuery(".list_df dl").find("img").bind("click", function () {
+        alertdfinfo(jQuery(this));
+    });
+    jQuery(".list_df dl").find("span").bind("click", function () {
+        alertdfinfo(jQuery(this).prev());
+    });
+    function alertdfinfo(thisdom) {
+        jQuery.ajax({
+            url: "/agent/ajax/DouFangAjax.aspx?dfid=" + thisdom.attr("id"),
+            type: 'GET',
+            dataType: 'html',
+            success: function (response) {
+                if (response != null && response != "") {
+                    jQuery(".img_pup").html(response);
+                    jQuery(".text_people .name_f span").html(jQuery("#agentname").html());
+                    jQuery(".text_people .phone_i span").html(jQuery(".person li .redword").html());
+                    jQuery(".jr_wid .img_pop").attr("src", (jQuery(".topeople").attr("src")));
+                    jQuery(".text_people .name_f img").attr("name", jQuery("#onlineimg").attr("name"));
+                    //jQuery.getScript("https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js");
+                    //jQuery.getScript("//static.soufunimg.com/common_m/pc_public/fangplayer/build/fangPlayer.js");
+                    
+                    jQuery(".img_pup").show();
+                }
+            }
+        });
+    }
+   
+</script>
+
+</body></html>

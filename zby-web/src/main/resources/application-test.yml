@@ -1,0 +1,3 @@
+zby:
+  name: zbyyyyyy
+  age: ${random.int(100)}
