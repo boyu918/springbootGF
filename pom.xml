@@ -20,6 +20,7 @@
         <module>zby-dao</module>
         <module>zby-service</module>
         <module>zby-api</module>
+        <module>consumer</module>
     </modules>
     <properties>
         <zifae.project.version>1.0.0-SNAPSHOT</zifae.project.version>
@@ -168,10 +169,7 @@
             <version>1.9.2</version>
         </dependency>
         <!--  end -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
+
     </dependencies>
     <dependencyManagement>
         <dependencies>
