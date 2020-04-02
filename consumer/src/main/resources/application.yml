@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: zby-consumer
+server:
+  port: 5555
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:4444/eureka
+  instance:
+    hostname: zby-consumer

@@ -12,6 +12,7 @@ import com.zby.manage.model.UserIoc;
 import com.zby.manage.model.UserJwt;
 import com.zby.manage.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import tk.mybatis.mapper.entity.Example;
 
@@ -74,11 +75,13 @@ public class UserController implements UserApi {
 
     @Autowired
     private UserService userService;
+    @Value("${server.port}")
+    private Integer port;
     @Override
-    @GetMapping("hello")
+    @PostMapping("hello")
     public String hello(){
-        userService.doServcie();
-        return "hello";
+//        userService.doServcie();
+        return "生产者端口："+port;
     }
 
 }

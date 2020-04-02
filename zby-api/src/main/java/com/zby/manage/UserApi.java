@@ -3,6 +3,7 @@ package com.zby.manage;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * @author zby
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @FeignClient(value = "zby-springboot")
 public interface UserApi {
-    @GetMapping("user/hello")
+    @PostMapping("/user/hello")
     String hello();
 
 }
