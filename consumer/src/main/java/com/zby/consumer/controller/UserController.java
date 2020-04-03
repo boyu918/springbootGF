@@ -2,6 +2,7 @@ package com.zby.consumer.controller;
 
 import com.zby.manage.UserApi;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -13,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
  * Time: 3:05 PM
  */
 @RestController
+@ComponentScan(basePackages = {"com.zby.manage"})
 public class UserController {
 
 

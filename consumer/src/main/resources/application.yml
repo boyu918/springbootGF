@@ -9,3 +9,6 @@ eureka:
       defaultZone: http://localhost:4444/eureka
   instance:
     hostname: zby-consumer
+feign:
+ hystrix:
+  enabled: true
