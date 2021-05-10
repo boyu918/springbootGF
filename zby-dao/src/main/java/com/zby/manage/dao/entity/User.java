@@ -2,8 +2,9 @@ package com.zby.manage.dao.entity;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
-public class User {
+public class User implements Serializable {
 
     @Id
     private Long id;

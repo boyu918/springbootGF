@@ -1,7 +1,6 @@
 package com.zby.manage.service;
 
 import com.zby.manage.dao.entity.User;
-import org.springframework.stereotype.Service;
 
 /**
  * @author zby
@@ -9,4 +8,5 @@ import org.springframework.stereotype.Service;
  */
 public interface UserService {
     User doServcie();
+    String doTest(int i);
 }

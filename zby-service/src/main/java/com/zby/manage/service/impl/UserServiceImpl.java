@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.*;
+
 /**
  * @author zby
  * @time 2019/7/8 16:06
@@ -24,10 +26,17 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         user.setName("xss");
         user.setAge(5);
-        userMapper.insert(user);
-        businessService.doBusiness();
-        int a = 1/0;
-        System.out.println(a);
+//        userMapper.insert(user);
+//        businessService.doBusiness();
+//        int a = 1/0;
+//        System.out.println(a);
         return user;
+    }
+    @Override
+    public String doTest(int i){
+        if (i == 3){
+            i = 55;
+        }
+        return i+"";
     }
 }

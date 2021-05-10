@@ -36,7 +36,7 @@ public class ErrorController extends ResponseEntityExceptionHandler {
         response.setStatus(HttpStatus.BAD_REQUEST.value());
         CustomException exception = (CustomException) e;
         e.printStackTrace();
-        return ResponseEntity.error(exception.getCode(), exception.getMessage());
+        return ResponseEntity.error(1001, exception.getMessage());
     }
 
     /**
