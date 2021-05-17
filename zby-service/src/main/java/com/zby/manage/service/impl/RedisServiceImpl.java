@@ -38,7 +38,6 @@ public class RedisServiceImpl implements RedisServise {
             //获取时间毫秒值
             long expireAt = System.currentTimeMillis() + expireTime + 1;
             String uuid = UUID.randomUUID().toString();
-            log.info(uuid);
             RedisSerializer valueSerializer = redisTemplate.getValueSerializer();
             RedisSerializer keySerializer = redisTemplate.getKeySerializer();
             while (System.currentTimeMillis() < expireAt){
@@ -63,7 +62,7 @@ public class RedisServiceImpl implements RedisServise {
     @Override
     public Boolean unlock(String key,String uuid) {
         DefaultRedisScript redisScript = new DefaultRedisScript();
-        redisScript.setResultType(Integer.class);
+        redisScript.setResultType(Long.class);
         redisScript.setScriptText("if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end");
         Object result = null;
         try {
@@ -71,7 +70,8 @@ public class RedisServiceImpl implements RedisServise {
             if (RELEASE_SUCCESS.equals(result)) {
                 log.info("release lock success, requestToken:" + uuid);
                 return true;
-            }}catch (Exception e){
+            }
+        }catch (Exception e){
             log.error("release lock due to error",e);
         }
         return false;
