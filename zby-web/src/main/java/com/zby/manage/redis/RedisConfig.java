@@ -1,17 +1,24 @@
 package com.zby.manage.redis;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+
+import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.connection.RedisNode;
+import org.springframework.data.redis.connection.RedisSentinelConfiguration;
+import org.springframework.data.redis.connection.lettuce.LettuceClientConfiguration;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
+import org.springframework.data.redis.connection.lettuce.LettucePoolingClientConfiguration;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Description:
@@ -20,58 +27,64 @@ import redis.clients.jedis.JedisPoolConfig;
  * Time: 3:10 PM
  */
 @Configuration
-@ConditionalOnBean(RedisTemplate.class)
 public class RedisConfig {
-    @Value("${spring.redis.host}")
-    private String host;
 
-    @Value("${spring.redis.port}")
-    private int port;
+    @Autowired
+    RedisProperties redisProperties;
 
-    @Value("${spring.redis.timeout}")
-    private int timeout;
-
-    @Value("${spring.redis.password}")
-    private String password;
-
-    @Value("${spring.redis.pool.max-idle}")
-    private int maxIdle;
-
-    @Value("${spring.redis.pool.max-active}")
-    private int maxActive;
-
-    @Value("${spring.redis.pool.max-wait}")
-    private int maxWait;
-
+    //读取pool配置
     @Bean
-    @ConditionalOnBean(Jedis.class)
-    public RedisConnectionFactory redisConnectionFactory(){
-        JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-        jedisPoolConfig.setMaxIdle(maxIdle);
-        jedisPoolConfig.setMaxWaitMillis(maxWait);
-        JedisConnectionFactory redisConnectionFactory = new JedisConnectionFactory();
-        redisConnectionFactory.setPoolConfig(jedisPoolConfig);
-        redisConnectionFactory.setHostName(host);
-        redisConnectionFactory.setPort(port);
-        redisConnectionFactory.setPassword(password);
-        redisConnectionFactory.setTimeout(timeout);
-        return redisConnectionFactory;
+    public GenericObjectPoolConfig poolConfig() {
+        GenericObjectPoolConfig config = new GenericObjectPoolConfig();
+        config.setMinIdle(redisProperties.getLettuce().getPool().getMinIdle());
+        config.setMaxIdle(redisProperties.getLettuce().getPool().getMaxIdle());
+        config.setMaxTotal(redisProperties.getLettuce().getPool().getMaxActive());
+        config.setMaxWaitMillis(redisProperties.getLettuce().getPool().getMaxWait().toMillis());
+        return config;
     }
+    /**
+     * @Description:  将哨兵信息放到配置中
+     * @date 2020/6/7 14:42
+     */
     @Bean
-    public RedisTemplate redisTemplate(RedisConnectionFactory redisConnectionFactory){
-        RedisTemplate redisTemplate = new RedisTemplate();
-        redisTemplate.setConnectionFactory(redisConnectionFactory);
-        redisTemplate.setKeySerializer(new StringRedisSerializer());
-        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+    public RedisSentinelConfiguration configuration() {
+        RedisSentinelConfiguration redisConfig = new RedisSentinelConfiguration();
+        redisConfig.setMaster(redisProperties.getSentinel().getMaster());
+        redisConfig.setPassword(redisProperties.getPassword());
+//        redisConfig.setPassword(RedisPassword.of(redisConfigThree.getPassword()));
+        if(redisProperties.getSentinel().getNodes()!=null) {
+            List<RedisNode> sentinelNode=new ArrayList<RedisNode>();
+            for(String sen : redisProperties.getSentinel().getNodes()) {
+                String[] arr = sen.split(":");
+                sentinelNode.add(new RedisNode(arr[0],Integer.parseInt(arr[1])));
+            }
+            redisConfig.setSentinels(sentinelNode);
+        }
+        return redisConfig;
+    }
+    @Bean("lettuceConnectionFactory")
+    public LettuceConnectionFactory lettuceConnectionFactory(@Qualifier("poolConfig") GenericObjectPoolConfig config,
+                                                             @Qualifier("configuration") RedisSentinelConfiguration redisConfig) {//注意传入的对象名和类型RedisSentinelConfiguration
+        LettuceClientConfiguration clientConfiguration = LettucePoolingClientConfiguration.builder().poolConfig(config).build();
+        return new LettuceConnectionFactory(redisConfig, clientConfiguration);
+    }
+
+    @Bean("stringObjectRedisTemplate")
+    public RedisTemplate<String, Object> stringObjectRedisTemplate(@Qualifier("lettuceConnectionFactory")LettuceConnectionFactory connectionFactory) {
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+        redisTemplate.setConnectionFactory(connectionFactory);
+
+        StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
+        GenericJackson2JsonRedisSerializer genericJackson2JsonRedisSerializer = new GenericJackson2JsonRedisSerializer();
+
+        //设置序列化器
+        redisTemplate.setKeySerializer(stringRedisSerializer);
+        redisTemplate.setValueSerializer(genericJackson2JsonRedisSerializer);
+        redisTemplate.setHashKeySerializer(stringRedisSerializer);
+        redisTemplate.setHashValueSerializer(genericJackson2JsonRedisSerializer);
+        redisTemplate.afterPropertiesSet();
+
         return redisTemplate;
-    }
-    @Bean
-    public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory redisConnectionFactory){
-        StringRedisTemplate stringRedisTemplate = new StringRedisTemplate();
-        stringRedisTemplate.setConnectionFactory(redisConnectionFactory);
-        stringRedisTemplate.setKeySerializer(new StringRedisSerializer());
-        stringRedisTemplate.setHashKeySerializer(new StringRedisSerializer());
-        return stringRedisTemplate;
     }
 
 }

@@ -1,23 +1,21 @@
 package com.zby.manage.service.impl;
 
 import com.zby.manage.service.RedisServise;
-import lombok.extern.log4j.Log4j;
-import org.assertj.core.util.Lists;
-import org.mockito.internal.util.collections.ListUtil;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
-import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.stereotype.Service;
 
+import javax.sound.sampled.Line;
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.UUID;
 
 @Service
-@Log4j
+@Log4j2
 public class RedisServiceImpl implements RedisServise {
     private static final String LOCK_SUCCESS = "OK";
     private static final Long RELEASE_SUCCESS = 1L;
@@ -40,6 +38,7 @@ public class RedisServiceImpl implements RedisServise {
             //获取时间毫秒值
             long expireAt = System.currentTimeMillis() + expireTime + 1;
             String uuid = UUID.randomUUID().toString();
+            log.info(uuid);
             RedisSerializer valueSerializer = redisTemplate.getValueSerializer();
             RedisSerializer keySerializer = redisTemplate.getKeySerializer();
             while (System.currentTimeMillis() < expireAt){

@@ -12,7 +12,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.19.RELEASE</version>
+        <version>2.3.4.RELEASE</version>
     </parent>
     <modules>
         <module>zby-web</module>
@@ -65,6 +65,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!--Lettuce使用线程池必要包-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
         </dependency>
         <!-- lombok -->
         <dependency>
@@ -156,7 +161,6 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.5.3</version>
         </dependency>
         <!--  fastjson -->
         <dependency>
@@ -191,59 +195,10 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Edgware.SR3</version>
+                <version>Hoxton.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <!--<dependencyManagement>-->
-        <!--<dependencies>-->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.cloud</groupId>-->
-                <!--<artifactId>spring-cloud-dependencies</artifactId>-->
-                <!--<version>Brixton.SRS</version>-->
-                <!--<type>pom</type>-->
-                <!--<scope>import</scope>-->
-            <!--</dependency>-->
-        <!--</dependencies>-->
-    <!--</dependencyManagement>-->
-    <!--<build>-->
-        <!--<plugins>-->
-            <!--&lt;!&ndash;要创建一个可执行jar，我们需要添加spring-boot-maven-plugin到我们的 pom.xml&ndash;&gt;-->
-            <!--<plugin>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-            <!--</plugin>-->
-        <!--</plugins>-->
-    <!--</build>-->
-    <!--<repositories>-->
-        <!--<repository>-->
-            <!--<id>spring-milestones</id>-->
-            <!--<name>Spring Milestones</name>-->
-            <!--<url>https://repo.spring.io/milestone</url>-->
-            <!--<snapshots>-->
-                <!--<enabled>false</enabled>-->
-            <!--</snapshots>-->
-        <!--</repository>-->
-        <!--<repository>-->
-            <!--<id>repository.springframework.maven.release</id>-->
-            <!--<name>Spring Framework Maven Release Repository</name>-->
-            <!--<url>http://maven.springframework.org/milestone/</url>-->
-        <!--</repository>-->
-        <!--<repository>-->
-            <!--<id>org.springframework</id>-->
-            <!--<url> http://maven.springframework.org/snapshot</url>-->
-        <!--</repository>-->
-        <!--<repository>-->
-            <!--<id>spring-milestone</id>-->
-            <!--<name>Spring Maven MILESTONE Repository</name>-->
-            <!--<url>http://repo.spring.io/libs-milestone</url>-->
-        <!--</repository>-->
-        <!--<repository>-->
-            <!--<id>spring-release</id>-->
-            <!--<name>Spring Maven RELEASE Repository</name>-->
-            <!--<url>http://repo.spring.io/libs-release</url>-->
-        <!--</repository>-->
-    <!--</repositories>-->
 </project>

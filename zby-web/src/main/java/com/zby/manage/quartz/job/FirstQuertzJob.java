@@ -1,6 +1,7 @@
 package com.zby.manage.quartz.job;
 
 import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import org.quartz.*;
 
 /**
@@ -13,7 +14,7 @@ import org.quartz.*;
 //@DisallowConcurrentExecution
 //表示在成功执行方法后，更新jobdetail中map数据
 //@PersistJobDataAfterExecution
-@Log4j
+@Log4j2
 public class FirstQuertzJob implements Job{
     public FirstQuertzJob(){
 

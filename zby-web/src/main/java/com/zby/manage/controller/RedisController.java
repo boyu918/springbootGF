@@ -1,7 +1,8 @@
 package com.zby.manage.controller;
 
 import com.zby.manage.service.RedisServise;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.java.Log;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
@@ -19,12 +20,12 @@ import java.util.concurrent.CountDownLatch;
  */
 @RestController
 @RequestMapping("/redis")
-@Log4j
+@Log4j2
 public class RedisController {
 
 
     @Autowired
-    private RedisTemplate redisTemplate;
+    RedisTemplate<String,String> redisTemplate;
 
     @Autowired
     private RedisServise redisServise;
@@ -41,6 +42,10 @@ public class RedisController {
     public String delete(String key){
         redisTemplate.opsForValue().getOperations().delete(key);
         return "1";
+    }
+    @PostMapping("/get")
+    public String get(String key){
+        return (String) redisTemplate.opsForValue().get(key);
     }
     private static Integer count = 500;
     @PostMapping("/testlock")

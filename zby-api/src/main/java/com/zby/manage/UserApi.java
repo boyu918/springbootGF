@@ -2,7 +2,7 @@ package com.zby.manage;
 
 
 import com.zby.manage.fallback.FallBackController;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 
 /**
