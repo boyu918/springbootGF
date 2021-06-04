@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:log4jdbc:mysql://127.0.0.1:3306/zby_springboot?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
     username: root
-    password: WO8228366
+    password: root
 #    driver-class-name: com.mysql.jdbc.Driver
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     type: com.alibaba.druid.pool.DruidDataSource
