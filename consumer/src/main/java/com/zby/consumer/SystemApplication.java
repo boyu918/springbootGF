@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,9 +16,9 @@ import org.springframework.web.client.RestTemplate;
  * Date: 2020-04-02
  * Time: 2:17 PM
  */
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 //这个工程不用数据库就把数据库的依赖删除掉，不然启动会报错，默认需要填写数据库配置
-@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+//@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 @EnableFeignClients(basePackages = {"com.zby.manage"}) //如果feign文件不在需要加上
 @EnableDiscoveryClient
 public class SystemApplication {

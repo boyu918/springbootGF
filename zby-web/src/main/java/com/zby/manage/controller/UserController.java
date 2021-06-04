@@ -1,15 +1,11 @@
 package com.zby.manage.controller;
 
-import com.alibaba.druid.support.json.JSONUtils;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zby.manage.UserApi;
 import com.zby.manage.dao.entity.User;
 import com.zby.manage.dao.mapper.UserMapper;
 import com.zby.manage.jwt.PassToken;
-import com.zby.manage.jwt.UserLoginToken;
 import com.zby.manage.model.UserIoc;
 import com.zby.manage.model.UserJwt;
 import com.zby.manage.service.UserService;
@@ -19,7 +15,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author zby
@@ -34,19 +32,19 @@ public class UserController implements UserApi {
 
     @PostMapping("login")
     public Object login(UserJwt userForBase){
-        JSONObject jsonObject=new JSONObject();
+        Map<String,Object> map = new HashMap<>();
         if(userForBase==null){
-            jsonObject.put("message","登录失败,用户不存在");
-            return jsonObject;
+            map.put("message","登录失败,用户不存在");
+            return map;
         }else {
             if (!userForBase.getPassword().equals("123456")){
-                jsonObject.put("message","登录失败,密码错误");
-                return jsonObject;
+                map.put("message","登录失败,密码错误");
+                return map;
             }else {
                 String token = UserJwt.getToken(userForBase);
-                jsonObject.put("token", token);
-                jsonObject.put("user", userForBase);
-                return jsonObject;
+                map.put("token", token);
+                map.put("user", userForBase);
+                return map;
             }
         }
     }
