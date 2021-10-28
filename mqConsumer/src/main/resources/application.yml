@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: zby-mq-consumer
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672 #这个地方如果用docker 不能用web的访问地址 要用docker
+    username: guest
+    password: guest
+server:
+  port: 7001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:4444/eureka
+  instance:
+    hostname: zby-mq-consumer
