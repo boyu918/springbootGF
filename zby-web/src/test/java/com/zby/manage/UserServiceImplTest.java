@@ -1,6 +1,5 @@
 package com.zby.manage;
 
-import com.zby.manage.controller.TestCoverageController;
 import com.zby.manage.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,10 +23,5 @@ public class UserServiceImplTest extends AbstractTestNGSpringContextTests {
     public void test(){
         String test = userService.doTest(5);
         Assert.assertEquals(test,"5");
-    }
-    @Test
-    public void ttt(){
-        TestCoverageController testCoverageController = new TestCoverageController();
-        testCoverageController.aaa();
     }
 }

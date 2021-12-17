@@ -1,0 +1,70 @@
+redis
+调试地址：redis官方测试地址：https://try.redis.io/#run
+分布式锁：https://mp.weixin.qq.com/s?__biz=MzA4NTg1MjM0Mg==&mid=2657261514&idx=1&sn=47b1a63f065347943341910dddbb785d&chksm=84479e13b3301705ea29c86f457ad74010eba8a8a5c12a7f54bcf264a4a8c9d6adecbe32ad0b&mpshare=1&scene=23&srcid=1004XqCveZ8C5IDjoB9ZXbWj#rd
+1.redis优点
+ 1.1 异常快
+ 1.2 支持丰富的数据类型
+ 1.3 操作具有原子性
+ 1.4 多实用工具 - Redis 是一个多实用工具，可用于多种用例，如：缓存，消息队列(Redis 本地支持发布/订阅)，应用程序中的任何短期数据，例如，web应用程序中的会话，网页命中计数等。
+2.数据类型：5种 分别为字符串、list、set、hash、zset
+ 2.1 字符串
+   2.1.1 内部存储的是动态字符串，Redis 为了对内存做极致的优化，不同长度的字符串使用不同的结构体来表示。
+   2.1.2 Redis 规定了字符串的长度不得超过 512 MB。
+   2.1.3 字符串基本操作
+     2.1.3.1 set key value 设置key
+     2.1.3.2 get key  查询key
+     2.1.3.3 exists key 是否存在
+     2.1.3.4 del key 删除key
+     2.1.3.5 mset key1 value1 key2 value2 批量设置key和value
+     2.1.3.6 mget key1 key2  批量返回查询值
+     2.1.3.7 expire key time 设置key的过期时间
+     2.1.3.8 setex 等价于 set+expire setex key time value 设置key和过期时间
+     2.1.3.9 setnx key value 设置key 如果已存在则不保存，如果不存在，则设置保存
+     2.1.3.10 incr key 如果key的value可以为integer类型 则可以进行原子性的自增操作
+     2.1.3.11 getset key value 设置并返回
+ 2.2 list
+  2.2.1内部相当于LinkedList
+  2.2.2 list基本操作
+   2.2.2.1 lpush 和rpush 分别是向数据头部和尾部插入数据
+   2.2.2.2 lrange index1 index2 查询范围内的list数据 （-1代表最后一个元素）
+   2.2.2.3 lindex index 获取在index位置上的元素值
+   2.2.2.3 lpop 和rpop 分别是从头部和尾部删除数据
+ 2.3 hash
+  2.3.1 内部存储类似hashmap 但是内部有两个hashtable，每次只有一个有数据，而当需要扩容的时候，单线程的 Redis 不能忍受大数据量map的扩容
+        渐进式 rehash 会在 rehash 的同时，保留新旧两个 hash 结构，查询时会同时查询两个 hash 结构，然后在后续的定时任务以及 hash 操作指令中，循序渐进的把旧字典的内容迁移到新字典中。
+        当搬迁完成了，就会使用新的 hash 结构取而代之。
+  2.3.2 hash基本操作
+   2.3.2.1 hset hashname key value 设置在hashname中的key和value # 命令行的字符串如果包含空格则需要使用引号包裹
+   2.3.2.2 hgetall hashname 获取所有hash    # key 和 value 间隔出现
+   2.3.2.3 hget hashname key 获取hashname中这个key的值
+   2.3.2.4 hmset hashname key1 value1 key2 value2 批量设置
+ 2.4 set
+  2.4.1 相当于HashSet
+  2.4.2 set基本操作
+   2.4.2.1 sadd setname xx 存入setname中xx值
+   2.4.2.2 smembers setname 查询setname下所有值
+   2.4.2.3 sismemeber setname xx 查询xx是否在set内
+   2.4.2.4 scard setname 获取set的长度
+ 2.5 zset
+  2.5.1 zset 是一个有序的，内部用跳跃表来实现
+   2.5.1.1 ZADD books 9.0 "think in java"
+   2.5.1.2 ZRANGE books 0 -1     # 按 score 排序列出，参数区间为排名范围
+   2.5.1.3 ZREVRANGE books 0 -1  # 按 score 逆序列出，参数区间为排名范围
+   2.5.1.4 ZCARD books
+   2.5.1.5 ZSCORE books "java concurrency"   # 获取指定 value 的 score
+   2.5.1.6 ZRANK books "java concurrency" # 排名
+   2.5.1.7 ZRANGEBYSCORE books 0 8.91        # 根据分值区间遍历 zset
+   2.5.1.8 ZREM books "java concurrency"             # 删除 value
+3.SETNX 和 EXPIRE 并不是 原子指令，所以在一起执行会出现问题。
+  2.8版本后支持一起使用 SET key value [EX seconds | PX milliseconds] [NX | XX] [KEEPTTL]
+4.关于主从配置和哨兵  master slave sentinel
+  参考 https://blog.csdn.net/liuchuanhong1/article/details/53206028
+  如果有密码，则主从redis都要添加密码且一致
+  requirepass "123456" 设置密码
+  masterauth "123456"  设置主服务密码
+5.本工程配置 1master 2 slave 3 sentinel配置
+6.HyperLogLog（方便做统计）
+ 6.1 pfadd name user 向name这个hyperloglog中加入一个叫user的记录
+ 6.2 pfcount name 返回统计查询结果
+ 6.3 pfmerge newname name1 name2 统计多个hyperloglog的统计记录，先将name和name2数据都放入newname中在用6.2来统计数据即可
+7.BloomFilter 布隆过滤器
